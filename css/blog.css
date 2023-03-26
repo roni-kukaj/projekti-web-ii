@@ -1,0 +1,57 @@
+@media (max-width: 768px){}
+.nm-blog-categories-wrap {
+    padding-bottom: 39px;
+}
+.nm-blog-categories-wrap {
+    padding-top: 29px;
+    padding-bottom: 108px;
+}
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, center, cite, code, dd, del, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, i, iframe, img, ins, label, legend, li, menu, nav, object, ol, output, p, pre, q, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+user agent stylesheet
+div {
+    display: block;
+}
+body {
+    color: #777777;
+}
+body {
+    font-weight: normal;
+}
+.vc_progress_bar .vc_single_bar .vc_label, .woocommerce-tabs .tabs li a span, .product .summary .price del .amount, #nm-shop-sidebar-popup-reset-button, #nm-shop-sidebar-popup .nm-shop-sidebar .widget:last-child .nm-widget-title, #nm-shop-sidebar-popup .nm-shop-sidebar .widget .nm-widget-title, .nm-shop-filter-menu li a i, .woocommerce-loop-category__title .count, span.wpcf7-not-valid-tip, .widget_rss ul li .rss-date, .wp-caption-text, .comment-respond h3 #cancel-comment-reply-link, .nm-blog-categories-toggle li .count, .nm-menu-wishlist-count, .nm-menu li.nm-menu-offscreen .nm-menu-cart-count, .nm-menu-cart .count, .nm-menu .sub-menu li a, body {
+    font-size: 14px;
+}
+body {
+    font-family: 'MaisonNeue',sans-serif;
+}
+body {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    line-height: 2;
+    color: #777;
+}
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
