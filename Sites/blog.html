@@ -1,9 +1,99 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Blog</title>
+        <link rel="stylesheet" type="text/css" href="css/blogstyle.css">
+        <style>
+            .blog-categories{
+                padding: 20px;
+                padding-top: 8px;
+            }
+            .blog-categories ul{
+                list-style: none;
+                margin-left: -40px;
+                font-size: 20px;
+            }
+            .blog-categories ul li a{
+                text-decoration: none;
+                color: grey;
+                
+            }
+            .blog-categories ul li a:hover{
+                color: orange;
+            }
+            li {
+                display: inline;
+            }
+            .span-categories{
+                color: rgb(95, 95, 95);
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+            .right-side-products{
+                width: 33.33%;
+                float: right;
+            }
+            .center-products{
+                width: 33.33%;
+                margin: 0 auto;
+            }
+            .left-side-products{
+                width: 33.33%;
+                float: left;
+                margin-top: -445px;
+            }
+            .every-item{
+               padding-left: 63px;
+               
+            }
+            .heading-category{
+                font-weight: 60;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+            }
+            .par-category{
+                color: rgb(95, 95, 95);
+                width: 300px;
+            }
+            .product-blog{
+                margin-top: 30px;
+            }
+        </style>
     </head>
     <body>
-        
+        <header>
+
+        </header>
+        <div class="blog-categories">
+            <ul>
+                <li><a href="">All</a></li>
+                <span class="span-categories">/</span>
+                <li><a href="">Designer</a></li>
+                <span class="span-categories">/</span>
+                <li><a href="">Casual</a></li>
+            </ul>
+        </div>
+        <section class="product-blog">
+           <div class="right-side-products every-item">
+            <img src="../images/adidas.jpg" width="320px" height="250px">
+            <h2 class="heading-category">Adidas</h3>
+            <p class="par-category">Adidas has introduced innovation in all its shoes throughout the years to
+                not only satisfy everyone's fashion needs but to also build trust in the sportswear industry.</p>
+           </div>
+           <div class="center-products every-item">
+            <img src="../images/drm.jpg" width="320px" height="250px">
+            <h2 class="heading-category">Dr. Martens</h3>
+            <p class="par-category">Martens boots — consists of Dr. Martens' signature air-cushioned rubber sole,
+                a smooth and stiff leather upper, and instantly recognizable yellow stitching in most of its pairs.</p>
+           </div>
+           <div class="left-side-products every-item">
+            <img src="../images/naf1.webp" width="320px" height="250px">
+            <h2 class="heading-category">Nike Air Force</h3>
+            <p class="par-category">It is the first Nike Basketball sneaker with Air technology. The Air Force 1 Low is considered to be the most heralded sneaker of all-time, consistently being
+                among the best sellers of the year — especially in its classic all-white colorway.</p>
+           </div>
+        </section>
+        <footer>
+
+        </footer>
     </body>
 </html>
