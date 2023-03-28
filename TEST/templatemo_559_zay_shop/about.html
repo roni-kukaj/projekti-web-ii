@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Zay Shop - About Page</title>
+    <title>About Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -92,9 +92,9 @@ https://templatemo.com/tm-559-zay-shop
                     <a class="nav-icon position-relative text-decoration-none" href="products.html">
                         <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
                     </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="profile.html">
+                    <button class="btn nav-icon position-relative" data-bs-toggle="modal" data-bs-target="#login-modal">
                         <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                    </a>
+                    </button>
                 </div>
             </div>
 
@@ -119,6 +119,82 @@ https://templatemo.com/tm-559-zay-shop
         </div>
     </div>
 
+    <!-- Login Modal -->
+    <div class="modal fade" id="login-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center bg-light">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Log In</h1>
+            </div>
+
+            <div class="modal-body">
+              <form action="" method="">
+                <div class="mb-3">
+                    <label for="email-input" class="form-label">Email address</label>
+                    <input type="email" class="form-control border" id="email-input" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="password-input" class="form-label">Password</label>
+                    <input type="password" class="form-control border" id="password-input" placeholder="###">
+                </div>
+              </form>
+              <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
+            </div>
+
+            <div class="modal-footer bg-light">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success">Log In</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Signup modal -->
+    <div class="modal fade" id="signup-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header justify-content-center bg-light">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Sign Up</h1>
+            </div>
+
+            <div class="modal-body">
+              <form action="" method="">
+                <div class="mb-3">
+                    <label for="name-input" class="form-label">First Name</label>
+                    <input type="text" class="form-control border" id="name-input" placeholder="John">
+                </div>
+                <div class="mb-3">
+                    <label for="lastname-input" class="form-label">Last Name</label>
+                    <input type="text" class="form-control border" id="lastname-input" placeholder="Smith">
+                </div>
+                <div class="mb-3">
+                    <label for="email-input" class="form-label">Email Address</label>
+                    <input type="email" class="form-control border" id="email-input" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-email-input" class="form-label">Confirm Email Address</label>
+                    <input type="email" class="form-control border" id="confirm-email-input" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="password-input" class="form-label">Password</label>
+                    <input type="password" class="form-control border" id="password-input" placeholder="###">
+                </div>
+                <div class="mb-3">
+                    <label for="confirm-password-input" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control border" id="confirm-password-input" placeholder="###">
+                </div>
+              </form>
+              <hr>
+              <p>Already have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#login-modal" data-bs-dismiss="modal" href=""><b>Log In</b></a> here</p>
+            </div>
+            
+            <div class="modal-footer bg-light">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success">Sign Up</button>
+            </div>
+          </div>
+        </div>
+    </div>
 
 
     <section class="bg-success py-5">
