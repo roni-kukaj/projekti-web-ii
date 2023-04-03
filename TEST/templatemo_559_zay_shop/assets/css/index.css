@@ -11,7 +11,8 @@
 }
 
 #vans-shoe{
-    height: 90%;
-    width: 90%;
+    height: 20rem;
+    width: 20rem;
     margin: 10px;
+    margin-left: 20%;
 }
