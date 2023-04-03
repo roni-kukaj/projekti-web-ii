@@ -2,5 +2,16 @@
     height: 90%;
     margin: 10px;
     margin-top: 3rem;
-    border-radius: 10px;
+}
+
+#puma-shoe{
+    height: 90%;
+    width: 90%;
+    margin: 10px;
+}
+
+#vans-shoe{
+    height: 80%;
+    width: 80%;
+    margin: 10px;
 }
