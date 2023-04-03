@@ -16,3 +16,10 @@
     margin: 10px;
     margin-left: 20%;
 }
+.rounded-circle{
+    height: 20rem;
+    width: 20rem;
+}
+.card-img-top{
+    padding: 3rem;
+}
