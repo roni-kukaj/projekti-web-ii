@@ -12,17 +12,12 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 
     <!-- Load fonts style after rendering the layout styles -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
-<!--
-    
-TemplateMo 559 Zay Shop
 
-https://templatemo.com/tm-559-zay-shop
-
--->
 </head>
 
 <body>
@@ -32,12 +27,12 @@ https://templatemo.com/tm-559-zay-shop
             <div class="w-100 d-flex justify-content-between">
                 <div>
                     <i class="fa fa-envelope mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@shoeshop.com</a>
                     <i class="fa fa-phone mx-2"></i>
-                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">049/123-4567</a>
                 </div>
                 <div>
-                    <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://fb.com/" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
                     <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
@@ -208,7 +203,7 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="container">
                     <div class="row p-2">
                         <div class="mx-auto col-md-10 col-lg-6 order-lg-last" >
-                            <img class="img-fluid" src="./assets/img/nike.jpg" height="1000" width="300" alt="">
+                            <img class="img-fluid" id="nike-shoe" src="./assets/img/nike3_thumbnail.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -227,7 +222,7 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/puma.jpg" alt="">
+                            <img class="img-fluid" id="puma-shoe" src="./assets/img/puma_thumbnail.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
@@ -245,7 +240,7 @@ https://templatemo.com/tm-559-zay-shop
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" src="./assets/img/vans.jpg" alt="">
+                            <img class="img-fluid" id="vans-shoe" src="./assets/img/vans_thumbnail.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
@@ -278,19 +273,19 @@ https://templatemo.com/tm-559-zay-shop
                 
             </div>
         </div>
-        <div class="row">
-            <div class="col-12 col-md-5 p-3 mt-5">
-                <a href="#"><img src="./assets/img/sneakers.avif" class="rounded-circle img-fluid border"></a>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-3 p-3 mt-3 mx-3">
+                <a href="#"><img src="./assets/img/nikr.webp" class="rounded-circle border"></a>
                 <h5 class="text-center mt-3 mb-3">Sneakers</h5>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
-            <div class="col-12 col-md-3 p-3 mt-3">
-                <a href="#"><img src="./assets/img/htop.jpg" class="rounded-circle img-fluid border"></a>
+            <div class="col-12 col-md-3 p-3 mt-3 mx-3">
+                <a href="#"><img src="./assets/img/htop.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">High-tops</h2>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
-            <div class="col-12 col-md-3 p-3 mt-3">
-                <a href="#"><img src="./assets/img/boots.jpg" class="rounded-circle img-fluid border"></a>
+            <div class="col-12 col-md-3 p-3 mt-3 mx-3">
+                <a href="#"><img src="./assets/img/boots.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Boots</h2>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
@@ -317,69 +312,36 @@ https://templatemo.com/tm-559-zay-shop
                             <img src="./assets/img/nbs.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$240.00</li>
-                            </ul>
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">New Balance</a>
                             <p class="card-text">
                                 New Balance Athletics, Inc. (NB), best known as simply New Balance, is one of the world's major sports footwear and apparel manufacturers.
                             </p>
-                            <p class="text-muted">Reviews (24)</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/adidas.png" class="card-img-top" alt="...">
+                            <img src="./assets/img/adidas.png" class="card-img-top mb-3" alt="...">
                         </a>
                         <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                    <i class="text-muted fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$480.00</li>
-                            </ul>
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Adidas</a>
                             <p class="card-text">
                                 Adidas AG is a German multinational corporation, founded and headquartered in Herzogenaurach, Bavaria, that designs and manufactures shoes, clothing and accessories. It is the largest sportswear manufacturer in Europe
                             </p>
-                            <p class="text-muted">Reviews (48)</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/dr.jpg" class="card-img-top" alt="...">
+                            <img src="./assets/img/dr.jpg" class="card-img-top mb-5" alt="...">
                         </a>
                         <div class="card-body">
-                            <ul class="list-unstyled d-flex justify-content-between">
-                                <li>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                    <i class="text-warning fa fa-star"></i>
-                                </li>
-                                <li class="text-muted text-right">$360.00</li>
-                            </ul>
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Dr Martens</a>
                             <p class="card-text">
                                 Dr. Martens, also commonly known as Doc Martens, Docs or DMs, is a German-founded British footwear and clothing brand, headquartered in Wollaston in the Wellingborough district of Northamptonshire, England. 
                             </p>
-                            <p class="text-muted">Reviews (74)</p>
                         </div>
                     </div>
                 </div>
