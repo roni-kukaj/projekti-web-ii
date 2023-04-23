@@ -1,0 +1,25 @@
+#nike-shoe{
+    height: 90%;
+    margin: 10px;
+    margin-top: 3rem;
+}
+
+#puma-shoe{
+    height: 90%;
+    width: 90%;
+    margin: 10px;
+}
+
+#vans-shoe{
+    height: 20rem;
+    width: 20rem;
+    margin: 10px;
+    margin-left: 20%;
+}
+.rounded-circle{
+    height: 20rem;
+    width: 20rem;
+}
+.card-img-top{
+    padding: 3rem;
+}
