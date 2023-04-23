@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>shoeshop</title>
+    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/shoe-favicon.png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -120,17 +120,20 @@
             </div>
 
             <div class="modal-body">
-              <form action="" method="">
-                <div class="mb-3">
-                    <label for="email-input" class="form-label">Email address</label>
-                    <input type="email" class="form-control border" id="email-input" placeholder="name@example.com">
-                </div>
-                <div class="mb-3">
-                    <label for="password-input" class="form-label">Password</label>
-                    <input type="password" class="form-control border" id="password-input" placeholder="###">
-                </div>
-              </form>
-              <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
+                <form action="../sessions/login.php" method="post">
+                    <?php if(isset($_GET['error'])) { ?>
+                        <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                    <?php } ?>
+                    <div class="mb-3">
+                        <label for="email-input" class="form-label">Email address</label>
+                        <input type="email" class="form-control border" id="email-input" name="email-input" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password-input" class="form-label">Password</label>
+                        <input type="password" class="form-control border" id="password-input" name="password-input" placeholder="###">
+                    </div>
+                </form>
+                <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
             </div>
 
             <div class="modal-footer bg-light">
