@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -68,6 +69,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo 'contact.php'; ?>">Contact</a>
                         </li>
+                        <?php if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) { ?>
+                        <?php } else { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo 'profile.php'; ?>">Profile</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
@@ -79,15 +86,25 @@
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="products.html">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                    </a>
-                    <button class="btn nav-icon position-relative" data-bs-toggle="modal" data-bs-target="#login-modal">
-                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                    </button>
+                    
+                    <?php if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) { ?>
+                        <button class="btn nav-icon position-relative" data-bs-toggle="modal" data-bs-target="#login-modal">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>Login
+                        </button>
+                    <?php } else { ?>
+                        <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                            <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                        </a>
+                        <a class="nav-icon position-relative text-decoration-none" href="products.php">
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        </a>
+                        <form action="includes/sessions/logout.php" method="POST">
+                            <button class="btn nav-icon position-relative btn-outline-danger" type="submit">
+                                <i class="fa fa-fw fa-user text-dark mr-3"></i> Logout
+                            </button>
+                        </form>
+                        <p class="mt-4">Hello, <?php echo $_SESSION['user_name']; ?>!</p]>
+                    <?php }?>
                 </div>
             </div>
         </div>
