@@ -3,7 +3,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     session_start();
 
     include "../db/db_connection.php";
-    if(isset($_POST['email-input']) && isset($_POST['password-input'])){
+    if(isset($_POST['email']) && isset($_POST['password'])){
         function validate($data) {
             $data = trim($data);
             $data = stripslashes($data);
@@ -11,15 +11,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             return $data;
         }
     }
-    $email = validate($_POST['email-input']);
-    $password = validate($_POST['password-input']);
+    $email = validate($_POST['email']);
+    $password = validate($_POST['password']);
 
     if(empty($email)){
-        header("Location: ../repetitions/header.php?error=Email is required!");
+        header("Location: ../../index.php?error=Email is required!");
         exit();
     }
     else if(empty($password)){
-        header("Location: ../repetitions/header.php?error=Password is required!");
+        header("Location: ../../index.php?error=Password is required!");
         exit();
     }
 
@@ -32,11 +32,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $_SESSION['user_email'] = $row['email'];
             $_SESSION['user_name'] = $row['name'];
             $_SESSION['id'] = $row['id'];
+            echo 'Yes';
             header("Location: ../../index.php");
             exit();
         }
         else{
-            header("Location: ../repetitions/header.php?error=Incorrect email or password!");
+            echo 'No';
+            header("Location: ../../index.php?error=Incorrect email or password!");
             exit();
         }
     }

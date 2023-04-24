@@ -119,27 +119,27 @@
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Log In</h1>
             </div>
 
-            <div class="modal-body">
-                <form action="../sessions/login.php" method="post">
-                    <?php if(isset($_GET['error'])) { ?>
-                        <p class="text-danger"><?php echo $_GET['error']; ?></p>
-                    <?php } ?>
-                    <div class="mb-3">
-                        <label for="email-input" class="form-label">Email address</label>
-                        <input type="email" class="form-control border" id="email-input" name="email-input" placeholder="name@example.com">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password-input" class="form-label">Password</label>
-                        <input type="password" class="form-control border" id="password-input" name="password-input" placeholder="###">
-                    </div>
-                </form>
-                <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
-            </div>
+            <form action="includes/sessions/login.php" method="post">
+                <div class="modal-body">
+                        <?php if(isset($_GET['error'])) { ?>
+                            <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                        <?php } ?>
+                        <div class="mb-3">
+                            <label for="email-input" class="form-label">Email address</label>
+                            <input type="email" class="form-control border" id="email-input" name="email-input" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password-input" class="form-label">Password</label>
+                            <input type="password" class="form-control border" id="password-input" name="password-input" placeholder="###">
+                        </div>
+                    <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
+                </div>
 
-            <div class="modal-footer bg-light">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success">Log In</button>
-            </div>
+                <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="login-button1" class="btn btn-success">Log In</button>
+                </div>
+            </form>
           </div>
         </div>
     </div>

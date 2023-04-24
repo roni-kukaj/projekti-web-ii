@@ -157,5 +157,33 @@
             </div>
         </div>
     </section>
+
+    <script>
+        $(document).ready(function(){
+            $("#login-button").click(function() {
+                var email = $('email-input').val();
+                var password = $('password-input').val();
+                if(email != '' && password != ''){
+                    $.ajax({
+                        url: "includes/sessions/login.php",
+                        method: "POST",
+                        data: {email:email, password:password},
+                        success:function(data){
+                            if(data == 'No'){
+                                alert('Wrong data!');
+                            }
+                            else{
+                                $('login-modal').hide();
+                                location.reload();
+                            }
+                        }
+                    });
+                }
+                else{
+                    alert('All fields are required!');
+                }
+            }) 
+        })
+    </script>
     
 <?php require("includes/repetitions/footer.php"); ?>
