@@ -12,7 +12,7 @@
                 <div class="container">
                     <div class="row p-2">
                         <div class="mx-auto col-md-10 col-lg-6 order-lg-last" >
-                            <img class="img-fluid" id="nike-shoe" src="./assets/img/nike3_thumbnail.png" alt="">
+                            <img class="img-fluid" id="nike-shoe" src="assets/images/nike3_thumbnail.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left align-self-center">
@@ -31,7 +31,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" id="puma-shoe" src="./assets/img/puma_thumbnail.png" alt="">
+                            <img class="img-fluid" id="puma-shoe" src="assets/images/puma_thumbnail.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
@@ -49,7 +49,7 @@
                 <div class="container">
                     <div class="row p-5">
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
-                            <img class="img-fluid" id="vans-shoe" src="./assets/img/vans_thumbnail.png" alt="">
+                            <img class="img-fluid" id="vans-shoe" src="assets/images/vans_thumbnail.png" alt="">
                         </div>
                         <div class="col-lg-6 mb-0 d-flex align-items-center">
                             <div class="text-align-left">
@@ -84,17 +84,17 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
-                <a href="#"><img src="./assets/img/nikr.webp" class="rounded-circle border"></a>
+                <a href="#"><img src="assets/images/nikr.webp" class="rounded-circle border"></a>
                 <h5 class="text-center mt-3 mb-3">Sneakers</h5>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
-                <a href="#"><img src="./assets/img/htop.jpg" class="rounded-circle border"></a>
+                <a href="#"><img src="assets/images/htop.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">High-tops</h2>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
-                <a href="#"><img src="./assets/img/boots.jpg" class="rounded-circle border"></a>
+                <a href="#"><img src="assets/images/boots.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Boots</h2>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
@@ -118,7 +118,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/nbs.png" class="card-img-top" alt="...">
+                            <img src="assets/images/nbs.png" class="card-img-top" alt="...">
                         </a>
                         <div class="card-body">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">New Balance</a>
@@ -131,7 +131,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/adidas.png" class="card-img-top mb-3" alt="...">
+                            <img src="assets/images/adidas.png" class="card-img-top mb-3" alt="...">
                         </a>
                         <div class="card-body">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Adidas</a>
@@ -144,7 +144,7 @@
                 <div class="col-12 col-md-4 mb-4">
                     <div class="card h-100">
                         <a href="shop-single.html">
-                            <img src="./assets/img/dr.jpg" class="card-img-top mb-5" alt="...">
+                            <img src="assets/images/dr.jpg" class="card-img-top mb-5" alt="...">
                         </a>
                         <div class="card-body">
                             <a href="shop-single.html" class="h2 text-decoration-none text-dark">Dr Martens</a>

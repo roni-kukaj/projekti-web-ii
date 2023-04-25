@@ -1,12 +1,13 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <title>shoeshop</title>
+    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/shoe-favicon.png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/templatemo.css">
@@ -68,6 +69,12 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo 'contact.php'; ?>">Contact</a>
                         </li>
+                        <?php if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) { ?>
+                        <?php } else { ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo 'profile.php'; ?>">Profile</a>
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
                 <div class="navbar align-self-center d-flex">
@@ -79,15 +86,25 @@
                             </div>
                         </div>
                     </div>
-                    <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
-                        <i class="fa fa-fw fa-search text-dark mr-2"></i>
-                    </a>
-                    <a class="nav-icon position-relative text-decoration-none" href="products.html">
-                        <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
-                    </a>
-                    <button class="btn nav-icon position-relative" data-bs-toggle="modal" data-bs-target="#login-modal">
-                        <i class="fa fa-fw fa-user text-dark mr-3"></i>
-                    </button>
+                    
+                    <?php if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) { ?>
+                        <button class="btn nav-icon position-relative" data-bs-toggle="modal" data-bs-target="#login-modal">
+                            <i class="fa fa-fw fa-user text-dark mr-3"></i>Login
+                        </button>
+                    <?php } else { ?>
+                        <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+                            <i class="fa fa-fw fa-search text-dark mr-2"></i>
+                        </a>
+                        <a class="nav-icon position-relative text-decoration-none" href="products.php">
+                            <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+                        </a>
+                        <form action="includes/sessions/logout.php" method="POST">
+                            <button class="btn nav-icon position-relative btn-outline-danger" type="submit">
+                                <i class="fa fa-fw fa-user text-dark mr-3"></i> Logout
+                            </button>
+                        </form>
+                        <p class="mt-4">Hello, <?php echo $_SESSION['user_name']; ?>!</p]>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -119,24 +136,27 @@
               <h1 class="modal-title fs-5" id="staticBackdropLabel">Log In</h1>
             </div>
 
-            <div class="modal-body">
-              <form action="" method="">
-                <div class="mb-3">
-                    <label for="email-input" class="form-label">Email address</label>
-                    <input type="email" class="form-control border" id="email-input" placeholder="name@example.com">
+            <form action="includes/sessions/login.php" method="post">
+                <div class="modal-body">
+                        <?php if(isset($_GET['error'])) { ?>
+                            <p class="text-danger"><?php echo $_GET['error']; ?></p>
+                        <?php } ?>
+                        <div class="mb-3">
+                            <label for="email-input" class="form-label">Email address</label>
+                            <input type="email" class="form-control border" id="email-input" name="email-input" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password-input" class="form-label">Password</label>
+                            <input type="password" class="form-control border" id="password-input" name="password-input" placeholder="###">
+                        </div>
+                    <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
                 </div>
-                <div class="mb-3">
-                    <label for="password-input" class="form-label">Password</label>
-                    <input type="password" class="form-control border" id="password-input" placeholder="###">
-                </div>
-              </form>
-              <p>Don't have an account? <a class="text-decoration-none text-success" data-bs-toggle="modal" data-bs-target="#signup-modal" data-bs-dismiss="modal" href=""><b>Sign Up</b></a> instead</p>
-            </div>
 
-            <div class="modal-footer bg-light">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-success">Log In</button>
-            </div>
+                <div class="modal-footer bg-light">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" id="login-button1" class="btn btn-success">Log In</button>
+                </div>
+            </form>
           </div>
         </div>
     </div>
