@@ -9,15 +9,12 @@
     <br><br>
 
     <div  class="center">
-       
-           
+ 
                 <form style="align-items: center;" class="my-1" onsubmit="validateform()" id="login-form">
                     <fieldset>
                         <div class="container">
                             <label class="form-label my-1" for="username"><b>Username  </b></label>
                             <input type="text" class="form-control my-1" id="username">
-
-
 
                             <label for="password" class="form-label my-1" style="width:5px;"><b>Password </b></label>
                             <input type="password" id="password" class="form-control my-1">
@@ -30,12 +27,8 @@
                         </div>
                     </fieldset>
                 </form>
-          
-
-        
+  
     </div>
-
-
 <br><br><br><br>
 </body>
 </html>

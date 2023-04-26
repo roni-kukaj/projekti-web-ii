@@ -69,6 +69,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo 'contact.php'; ?>">Contact</a>
                         </li>
+                        
                         <?php if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) { ?>
                         <?php } else { ?>
                             <li class="nav-item">
