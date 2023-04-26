@@ -8,8 +8,13 @@
    
     <br><br>
 
-    <div  class="center">
- 
+    div class="container mt-5">
+        <div class="row">
+            <div class="col mx-1">
+                <img src="../assets/images/login.avif" height="468px" width="650px" style="border-radius:20px;" >
+            </div>
+
+            <div class="col mx-2">
                 <form style="align-items: center;" class="my-1" onsubmit="validateform()" id="login-form">
                     <fieldset>
                         <div class="container">
@@ -27,11 +32,11 @@
                         </div>
                     </fieldset>
                 </form>
-  
+          </div>
+          </div>
     </div>
 <br><br><br><br>
 </body>
 </html>
 
     
-<?php require("includes/repetitions/footer.php"); ?>
