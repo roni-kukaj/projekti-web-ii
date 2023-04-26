@@ -89,9 +89,11 @@
                     </div>
                     
                     <?php if(!isset($_SESSION['user_name']) && !isset($_SESSION['user_email'])) { ?>
+                        <form action="login-page.php" method="POST">
                         <button class="btn nav-icon position-relative" data-bs-toggle="modal" data-bs-target="#login-modal">
                             <i class="fa fa-fw fa-user text-dark mr-3"></i>Login
                         </button>
+                        </form>
                     <?php } else { ?>
                         <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
                             <i class="fa fa-fw fa-search text-dark mr-2"></i>
@@ -130,8 +132,6 @@
     </div>
 
     <!--
-
-    
     <div class="modal fade" id="login-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -164,7 +164,6 @@
         </div>
     </div>
 
-   
     <div class="modal fade" id="signup-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered">
           <div class="modal-content">
