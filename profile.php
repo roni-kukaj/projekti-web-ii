@@ -1,7 +1,11 @@
 <?php
     include("includes/repetitions/header.php"); 
-    
+    if(!isset($_SESSION['user_name'])){
 ?>
+<script>
+    window.location.replace('index.php');
+</script>
+<?php } ?>
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-5 mx-auto my-4">
