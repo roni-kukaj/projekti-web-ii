@@ -8,10 +8,10 @@
    
     <br><br>
 
-    div class="container mt-5">
+    <div class="container mt-5">
         <div class="row">
             <div class="col mx-1">
-                <img src="../assets/images/login.avif" height="468px" width="650px" style="border-radius:20px;" >
+                <img src="assets/images/login.avif" height="400px" width="590px" style="border-radius:20px;" >
             </div>
 
             <div class="col mx-2">
