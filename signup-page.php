@@ -8,8 +8,11 @@
 
         <br><br>
 
-      <div class="container mt-5">
+        <div class="container mt-5">
         <div class="row">
+            <div class="col mx-1">
+                <img src="assets/images/signup.avif" alt="Crypto" height="468px" width="600px" style="border-radius:20px;" >
+            </div>
 
             <div class="col mx-2">
                 <form  id="signup-form" class="my-1">
@@ -56,5 +59,3 @@
     <br><br><br><br>
 </html>
 
-    
-<?php require("includes/repetitions/footer.php"); ?>
