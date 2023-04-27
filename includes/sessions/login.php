@@ -41,5 +41,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email']) && isset($_POS
             exit();
         }
     }
+    else{
+        header("Location: ../../login-page.php?error=The email or password you have provided is incorrect!");
+        exit();
+    }
 }
 ?>

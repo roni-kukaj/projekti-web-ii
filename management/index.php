@@ -28,7 +28,7 @@
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-md-4">
-				<form action="manager-login.php" method="post" class="border p-5 rounded">
+				<form action="includes/sessions/manager-login.php" method="post" class="border p-5 rounded">
                     <div class="mb-3">
                         <h4 class="text-center">Write your credentials!</h4>
                         <hr>
