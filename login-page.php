@@ -1,41 +1,41 @@
 <?php require("includes/repetitions/header.php"); ?>
 
-<html>
-<head>
-    <title>Log In</title>
-</head>
-<body>
-   
-    <br><br>
-
-    <div class="container mt-5">
+    <div class="container mt-5 pt-5">
         <div class="row">
             <div class="col mx-1">
                 <img src="assets/images/login.avif" height="400px" width="590px" style="border-radius:20px;" >
             </div>
 
             <div class="col mx-2">
-                <form style="align-items: center;" class="my-1" onsubmit="validateform()" id="login-form">
+                <form action="includes/sessions/login.php" method="post" style="align-items: center;" class="my-1" id="login-form">
                     <fieldset>
                         <div class="container">
-                            <label class="form-label my-1" for="username"><b>Username  </b></label>
-                            <input type="text" class="form-control my-1" id="username">
+                            <label class="form-label my-1" for="email-input"><b>Email </b></label>
+                            <input type="text" class="form-control my-1" id="email-input" name="email">
+                            <p id="email-error-msg" style="display: none;" class="text-danger">This field is required</p>
 
-                            <label for="password" class="form-label my-1" style="width:5px;"><b>Password </b></label>
-                            <input type="password" id="password" class="form-control my-1">
+                            <label for="password-input" class="form-label my-1" style="width:5px;"><b>Password </b></label>
+                            <input type="password" id="password-input" class="form-control my-1" name="password">
+                            <p id="password-error-msg" style="display: none;" class="text-danger">This field is required</p>
 
-                            <p id="login-error-msg" style="opacity:0;">Your username or password is wrong!</p>
-
+                            <p id="login-error-msg" class="mt-1 text-danger" style="display: block;">
+                            <?php 
+                                if(isset($_GET['error'])){
+                                    echo $_GET['error'];
+                                }
+                            ?>
+                            </p>
                             <div>
-                                <button type="submit" class="login btn btn-secondary" id="login-form-submit">Log In</button>
+                                <button type="submit" class="login btn btn-success mt-2" id="login-form-submit">Log In</button>
                             </div>
                         </div>
                     </fieldset>
                 </form>
-          </div>
-          </div>
+                <br>
+                <p class="mx-4">Don't have an account? You can <a class="link-success" href="signup-page.php">Sign Up</a> instead!</p>
+            </div>
+        </div>
     </div>
-<br><br><br><br>
 </body>
 </html>
 

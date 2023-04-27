@@ -12,7 +12,7 @@
             <div class="card ">
                 <div class="card-body text-center">
                     <h5 class="card-title">User Profile</h5>
-                    <img src="assets/images/user_profile_pictures/person.png" alt="User Profile Image" class="img-fluid rounded-circle mb-3">
+                    <img src="<?php echo $_SESSION['profile_picture']; ?>" alt="User Profile Image" class="img-fluid rounded-circle mb-3">
                     <p class="card-text"><strong>Name:</strong> <?php echo $_SESSION['user_name']; ?></p>
                     <p class="card-text"><strong>Email:</strong> <?php echo $_SESSION['user_email']; ?> </p>
                     <p class="card-text"><strong>User ID:</strong> <?php echo $_SESSION['id']; ?></p>
@@ -23,12 +23,10 @@
                     </form>
                     <!-- Qetu ka mu desht me e kriju nje forme per me e bo update user information -->
                     
-                        <div class="row">
+                        <!-- <div class="row">
                             <div class="col-md-6 offset-3">
                             <form action="">
                                 <?php 
-                                   
-
                                     $emri = $_SESSION['emri'];
                                     $mbiemri = $_SESSION['mbiemri'];
                                     $email = $_SESSION['email'];
@@ -64,7 +62,7 @@
                             </form>
                             </div>
                             
-                        </div> 
+                        </div>  -->
 
                 </div>
             </div>

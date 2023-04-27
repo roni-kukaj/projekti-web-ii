@@ -43,6 +43,7 @@
                         <li><a class="text-decoration-none" href="<?php echo 'contact.php'; ?>">Shop Locations</a></li>
                         <li><a class="text-decoration-none" href="<?php echo 'FAQ.php'; ?>">FAQs</a></li>
                         <li><a class="text-decoration-none" href="<?php echo 'contact.php'; ?>">Contact</a></li>
+                        <li><a class="text-decoration-none" href="<?php echo 'management/index.php'; ?>">Management</a></li>
                     </ul>
                 </div>
 
