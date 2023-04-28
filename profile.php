@@ -18,7 +18,7 @@
                     <p class="card-text"><strong>User ID:</strong> <?php echo $_SESSION['id']; ?></p>
                 </div>
                 <div class="card-footer">
-                    <form action="" method="post">
+                    <form action="includes/sessions/update.php?id=<?php echo $_SESSION['id']; ?>" method="post">
                         <button class="btn btn-success ml-auto">Update Your Information</button>
                     </form>
                     <!-- Qetu ka mu desht me e kriju nje forme per me e bo update user information -->
