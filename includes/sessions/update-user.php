@@ -7,6 +7,13 @@ if(isset($_POST['update'])){
 
     $query_run = mysqli_query($conn,$query);
 
-    
+    if($query_run){
+        $_SESSION['user_name'] = $_POST['emri'];
+        $_SESSION['mbiemri'] = $_POST['mbiemri'];
+        header("Location: ../../profile.php");
+        exit();
+    }else{
+        echo "Data not updated";
+    }
 }
 ?>
