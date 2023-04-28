@@ -52,7 +52,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 </p>
 <div class="collapse" id="collapseExample">
     <div class="card card-body">
-        <form method="post" action="add_product.php">
+        <form method="post" action="add_products.php" enctype="multipart/form-data">
             <div class="mb-3">
                 <label for="name" class="form-label" width="20px">Name:</label>
                 <input type="text" id="name" name="name" class="form-control" required>
@@ -77,16 +77,13 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                 <input type="number" id="price" name="price" step="0.01" class="form-control"  required>
             </div>
 
-            <form action="upload.php" method="post" enctype="multipart/form-data">
+           
   <div class="mb-3">
     <label for="photo" class="form-label">Choose Photo:</label>
     <input type="file" class="form-control" id="photo" name="photo"  required>
   </div>
 
-</form>
-
-
-            <button type="submit" class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Save</button>
+            <button name="submit" type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
 </div>
