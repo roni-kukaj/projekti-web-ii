@@ -54,29 +54,39 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     <div class="card card-body">
         <form method="post" action="add_product.php">
             <div class="mb-3">
-                <label for="name" class="form-label">Name:</label>
-                <input type="text" id="name" name="name" class="form-control">
+                <label for="name" class="form-label" width="20px">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="gender" class="form-label">Gender:</label>
-                <select id="gender" name="gender" class="form-select">
+                <select id="gender" name="gender" class="form-select"  required>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="size" class="form-label">Size:</label>
-                <input type="text" id="size" name="size" class="form-control">
+                <input type="text" id="size" name="size" class="form-control"  required>
             </div>
             <div class="mb-3">
                 <label for="quantity" class="form-label">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" class="form-control">
+                <input type="number" id="quantity" name="quantity" class="form-control"  required>
             </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price:</label>
-                <input type="number" id="price" name="price" step="0.01" class="form-control">
+                <input type="number" id="price" name="price" step="0.01" class="form-control"  required>
             </div>
-            <button type="submit" class="btn btn-primary">Add Product</button>
+
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="photo" class="form-label">Choose Photo:</label>
+    <input type="file" class="form-control" id="photo" name="photo"  required>
+  </div>
+
+</form>
+
+
+            <button type="submit" class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Save</button>
         </form>
     </div>
 </div>
