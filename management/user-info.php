@@ -12,5 +12,23 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     </script>
 <?php } ?>
 
-<h3>Ketu do te shtohen te dhenat e user-it dhe gjithashtu do te shtohen te gjitha porosite te cilat i ka bere</h3>
-<h4>ID: <?php echo $_GET['user_id']; ?></h4>
+<?php 
+    $sql = "SELECT * FROM users WHERE id = '".$_GET['user_id']."'";
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result) === 1)
+        $data = mysqli_fetch_assoc($result);
+?>
+
+<div class="container">
+    <div class="col-md-4">
+    <img src="../<?php echo $data['profile_picture'] ?>" alt="User Profile Image" class="img-fluid rounded-circle mb-3">
+    </div>
+    <div class="col-md-8">
+        <ul>
+            <li>Emri: <b><?php echo $data['emri']; ?></b></li>
+        </ul>
+    </div>
+</div>
+
+
+<?php require "includes/repetitions/footer.php"; ?>
