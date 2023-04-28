@@ -1,3 +1,15 @@
+    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/shoe-favicon.png">
+
+    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/css/templatemo.css">
+    <link rel="stylesheet" href="../../assets/css/custom.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css"> 
+ 
  <?php
     include("../repetitions/header.php"); 
     if(!isset($_SESSION['user_name']))
@@ -32,7 +44,7 @@
 
 <?php
 
-require("includes/repetitions/footer.php");
+require("../repetitions/footer.php");
 
 ?>
 
