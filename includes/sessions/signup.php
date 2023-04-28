@@ -44,9 +44,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-
-
-
+$sql = "INSERT INTO users VALUES name = '".$name."'";
+    $result = mysqli_query($conn, $sql);
 
 
 ?>
