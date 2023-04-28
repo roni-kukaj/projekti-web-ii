@@ -1,24 +1,28 @@
-    <link rel="apple-touch-icon" href="assets/images/apple-icon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/shoe-favicon.png">
+<link rel="apple-touch-icon" href="assets/images/apple-icon.png">
+<link rel="shortcut icon" type="image/x-icon" href="assets/images/shoe-favicon.png">
 
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/templatemo.css">
-    <link rel="stylesheet" href="../../assets/css/custom.css">
-    <link rel="stylesheet" href="../../assets/css/index.css">
+<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../assets/css/templatemo.css">
+<link rel="stylesheet" href="../../assets/css/custom.css">
+<link rel="stylesheet" href="../../assets/css/index.css">
 
     <!-- Load fonts style after rendering the layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-    <link rel="stylesheet" href="assets/css/fontawesome.min.css"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+<link rel="stylesheet" href="assets/css/fontawesome.min.css"> 
  
  <?php
     include("../repetitions/header.php"); 
     if(!isset($_SESSION['user_name']))
-?>
+ ?>
 
                     <fieldset>
                         <div class="container">
-                            <label class="form-label my-1" for="email-input"><b>Email </b></label>
-                            <input type="text" class="form-control my-1" id="email-input" name="email">
+                            <label class="form-label my-1" for="emri-input"><b>Emri </b></label>
+                            <input type="text" class="form-control my-1" id="emri" name="emri">
+                            <p id="email-error-msg" style="display: none;" class="text-danger">This field is required</p>
+
+                            <label class="form-label my-1" for="mbiemri-input"><b>Mbiemri </b></label>
+                            <input type="text" class="form-control my-1" id="mbiemri" name="mbiemri">
                             <p id="email-error-msg" style="display: none;" class="text-danger">This field is required</p>
 
                             <label for="password-input" class="form-label my-1" style="width:5px;"><b>Password </b></label>
@@ -37,14 +41,30 @@
                             ?>
                             </p>
                             <div>
-                                <button type="submit" class="login btn btn-success mt-2" id="login-form-submit">Log In</button>
+                                <button type="submit" name="update" class="login btn btn-success mt-2" id="login-form-submit">Update</button>
                             </div>
                         </div>
                     </fieldset>
 
 <?php
-
 require("../repetitions/footer.php");
+
+
+$conn = mysqli_connect($servername_db, $username_db, $password_db, $db_name);
+
+$db = mysql_select_db($conn,'db_shoeshop');
+
+if(isset($_POST['update'])){
+    
+    $query = "UPDATE 'products' SET emri='$_POST[emri]', mbiemri='$_POST[mbiemri]', password='$_POST[password]'";
+    $query_run = mysqli_query($conn,$query);
+
+    if($query_run){
+        echo "Data updated";
+    }else{
+        echo "Data not updated";
+    }
+}
 
 ?>
 
