@@ -34,11 +34,21 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     </div>
     <div class="row w-25">
         <button class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Delete User</button>
-        <div class="collapse mt-3" id="collapseExample">
+        <div class="collapse mt-3 border p-3 rounded" id="collapseExample">
             Are you sure you want to delete this user?
-            <br>
-            <button class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+            <br><br>
+            <form action="delete-user.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
+                <button class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
         </div>
+        <p class="text-danger">
+            <?php
+                if(isset($_GET['error']))
+                    echo $_GET['error'];
+            ?>
+        </p>
     </div>
 </div>
 
