@@ -26,27 +26,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header("Location: ../../signup-page.php?error=Name is empty!");
         exit();
     }
-    else if(empty($username)){
+    if(empty($username)){
         header("Location: ../../signup-page.php?error=Username is empty!");
         exit();
     }
-    else if(empty($password)){
+    if(empty($password)){
         header("Location: ../../signup-page.php?error=Password is empty!");
         exit();
     }
-    else if(empty($confirm_password)){
+    if(empty($confirm_password)){
         header("Location: ../../signup-page.php?error=Confirm Password is empty!");
         exit();
     } 
-    else if($_POST['password'] !== $_POST['confirm_password']){
+    if($_POST['password'] !== $_POST['confirm_password']){
         header("Location: ../../signup-page.php?error=Passwords don't match!");
         exit();
     }
 }
 
-
-
-
+$sql = "INSERT INTO users () VALUES name = '".$name."'";
+    $result = mysqli_query($conn, $sql);
 
 
 ?>

@@ -21,18 +21,29 @@
  
 
 
+
+<?php 
+require("../db/db_connection.php");
+
+
+    $sql = "SELECT * FROM users WHERE emri = '".$_GET['emri']."', mbiemri = '".$_GET['mbiemri']."', password = '".$_GET['password']."'";
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result) === 1)
+        $data = mysqli_fetch_assoc($result);
+?>
+
                     <fieldset>
                         <div class="container">
                             <label class="form-label my-1" for="emri-input" ><b>Emri </b></label>
-                            <input type="text" class="form-control my-1" id="emri" name="emri" value="<?php echo "$_GET['emri']" ?>">
+                            <input type="text" class="form-control my-1" id="emri" name="emri" value="<?php echo $data['emri']; ?>">
                             
 
                             <label class="form-label my-1" for="mbiemri-input"><b>Mbiemri </b></label>
-                            <input type="text" class="form-control my-1" id="mbiemri" name="mbiemri" value="<?php echo "$_GET['mbiemri']" ?>">
+                            <input type="text" class="form-control my-1" id="mbiemri" name="mbiemri" value="<?php echo $data['mbiemri']; ?>">
                            
 
                             <label for="password-input" class="form-label my-1" style="width:5px;"><b>Password </b></label>
-                            <input type="password" id="password-input" class="form-control my-1" name="password" value="<?php echo "$_GET['password']" ?>">
+                            <input type="password" id="password-input" class="form-control my-1" name="password" value="<?php echo $data['password']; ?>">
                            
 
                             <!-- <label for="profike-picture" class="form-label my-1" style="width:5px;"><b>Profile-Picture </b></label>
@@ -51,13 +62,9 @@
                             </div>
                         </div>
                     </fieldset>
-
+</div> 
 <?php
-
-
 require("../db/db_connection.php");
-
-$db = mysql_select_db($conn,'db_shoeshop');
 
 if(isset($_POST['update'])){
     
@@ -73,48 +80,6 @@ if(isset($_POST['update'])){
 }
 
 
-
-require("../repetitions/footer.php");
 ?>
 
-
-                            <div class="col-md-6 offset-3">
-                            <form action="">
-                            <?php 
-                                    $emri = $_SESSION['emri'];
-                                    $mbiemri = $_SESSION['mbiemri'];
-                                    $email = $_SESSION['email'];
-                                    $password = $_SESSION['password'];
-                                    $sql = "SELECT * FROM users WHERE emri='$emri' . mbiemri='$mbiemri' . email='$email' . password='$password'";
-
-                                    $gotResult = mysqli_query($conn, $sql);
-
-                                    if($gotResult){
-                                        while(mysqli_num_rows($gotResult)>0){
-                                            //print_r($row['emri']);
-                                            ?>
-                                            <div class="form-group">
-                                                <input type="text" name="emri" class="form-control" value="<?php echo $row['emri']?>">
-                                            </div> 
-                                            <div class="form-group">
-                                                <input type="text" name="mbiemri" class="form-control" value="<?php echo $row['mbiemri']?>">
-                                            </div> 
-                                            <div class="form-group">
-                                                <input type="text" name="email" class="form-control" value="<?php echo $row['email']?>">
-                                            </div> 
-                                            <div class="form-group">
-                                                <input type="text" name="password" class="form-control" value="<?php echo $row['password']?>">
-                                            </div> 
-                                            <div class="form-group">
-                                                <input type="submit" name="update" class="btn btn-info" value="update" >
-                                            </div> 
-                                            <?php 
-                                        }
-                                    }
-                                ?>
-                                
-                            </form>
-                            </div>
-                            
-                        </div> 
- <?php require("includes/repetitions/footer.php"); ?> -->
+ <?php require("../repetitions/footer.php"); ?>
