@@ -44,8 +44,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-$sql = "INSERT INTO users () VALUES name = '".$name."'";
+    
+    $sql = "INSERT INTO users (emri, mbiemri, password) VALUES ('$name', '$username', '$password')";
     $result = mysqli_query($conn, $sql);
+
+    if($result){
+        header("Location: ../../signup-page.php");
+        exit();
+    } else{
+        header("Location: ../../signup-page.php?error=Failed to insert data!");
+        exit();
+    }
 
 
 ?>
