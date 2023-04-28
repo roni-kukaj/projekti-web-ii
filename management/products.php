@@ -1,11 +1,13 @@
 <?php
 require "includes/repetitions/header.php";
+require "includes/db/db_manager_connection.php";
 if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 ?>
 
 <script>
          window.location.replace('index.php');
  </script>
+  <?php } ?>
 
 <?php
     $sql = "SELECT id, name, gender, size, quantity, price FROM products";
@@ -44,6 +46,6 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
         </tbody>
     </table>
 </div>
- <?php } ?>
+
 
 <?php require "includes/repetitions/footer.php"; ?>

@@ -11,7 +11,6 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 <?php
     $sql = "SELECT id, emri, mbiemri, email FROM users";
     $result = mysqli_query($conn, $sql);
-
 ?>
 <div class="container">
     <h2 class="text-center my-5">Users Table</h2>
@@ -43,3 +42,6 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 </div>
 
 <?php require "includes/repetitions/footer.php"; ?>
+
+<!--
+    INSERT INTO users VALUES ('user', 'username', 'user@user.com', '$2y$10$nhEEgeCw5lwvQY2xOf4iiO8GzMaolrKliQN6yd0yctAIiVVneVyAi') -->
