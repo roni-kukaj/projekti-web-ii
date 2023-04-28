@@ -12,6 +12,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 <?php
     $sql = "SELECT id, name, gender, size, quantity, price FROM products";
     $result = mysqli_query($conn, $sql);
+
 ?>
 
 <div class="container">
@@ -43,10 +44,47 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                 </tr>
             <?php } ?>
 
-            
+   
+            <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        Add Product
+    </a>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        <form method="post" action="add_product.php">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" id="name" name="name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender:</label>
+                <select id="gender" name="gender" class="form-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="size" class="form-label">Size:</label>
+                <input type="text" id="size" name="size" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="quantity" class="form-label">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Product</button>
+        </form>
+    </div>
+</div>
+  </body>
+</html>
         </tbody>
     </table>
 </div>
 
 
-<?php require "includes/repetitions/footer.php"; ?>
+<?php require "includes/repetitions/footer.php"; ?>                                                                                                                      
