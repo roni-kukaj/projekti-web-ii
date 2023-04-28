@@ -12,7 +12,6 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 <?php
     $sql = "SELECT id, name, gender, size, quantity, price FROM products";
     $result = mysqli_query($conn, $sql);
-
 ?>
 
 <div class="container">
@@ -39,10 +38,12 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                     <td><?php echo $row['price']; ?></td>
                     <td>
                         <!-- <button type="submit" class="btn btn-link">More...</button> -->
-                        <a href="product-info.php?product_id=<?php echo $row['id'];?>" class="btn btn-link">m</a>
+                        <a href="product.php?product_id=<?php echo $row['id'];?>" class="btn btn-link">m</a>
                     </td>
                 </tr>
             <?php } ?>
+
+            
         </tbody>
     </table>
 </div>
