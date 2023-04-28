@@ -37,22 +37,21 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                     <td><?php echo $row['size']; ?></td>
                     <td><?php echo $row['quantity']; ?></td>
                     <td><?php echo $row['price']; ?></td>
-                    <td>
-                        <!-- <button type="submit" class="btn btn-link">More...</button> -->
-                        <a href="product.php?product_id=<?php echo $row['id'];?>" class="btn btn-link">m</a>
-                    </td>
+                
                 </tr>
             <?php } ?>
 
    
-            <p>
-    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-        Add Product
-    </a>
+        <p>
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Add Product</a>
+    <input type="hidden" name="id" value="1"> 
+  <a class="btn btn-primary" type="delete" name="delete">Delete</a>
 </p>
+
 <div class="collapse" id="collapseExample">
     <div class="card card-body">
         <form method="post" action="add_products.php" enctype="multipart/form-data">
+
             <div class="mb-3">
                 <label for="name" class="form-label" width="20px">Name:</label>
                 <input type="text" id="name" name="name" class="form-control" required>
