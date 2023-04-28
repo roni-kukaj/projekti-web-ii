@@ -23,20 +23,6 @@
 
                             <label class="form-label my-1" for="username"><b>Username</b> </label>
                            <input class="form-control my-1" type="text" class="input"  required>
-
-                            <label class="form-label my-1" for=""><b>Gender:</b></label>
-
-                            <div class="form-check form-check-inline">
-
-                                <input class="butoni form-check-input" type="radio" name="gjinia">
-                                <label class="form-check-label" for="">F</label>
-                            </div>
-
-                         <div class="form-check form-check-inline my-1">
-                         <input class="butoni form-check-input" type="radio" name="gjinia">
-                         <label class="form-check-label" for="">M</label>
-                        </div>
-                         <br>
                             <label class="form-label my-1" for="ID"><b>ID number</b></label>
                              <input class="form-control my-1" type="text"  class="input">
 
