@@ -29,7 +29,7 @@
                             <label class="form-label my-1" for="password"><b>Password</b></label>
                              <input class="form-control my-1" name="password" id="password" type="password"  class="input">
 
-                            <label class="form-label my-1" for="confirm"><b>Repeat Password</b></label>
+                            <label class="form-label my-1" for="confirm"><b>Confirm Password</b></label>
                             <input class="form-control my-1" type="password" name="confirm_password" id="confirm_password" class="input" required>
 
                             <p id="signup-error-msg" style="opacity:0;">Your passwords don't match.</p>
