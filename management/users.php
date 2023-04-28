@@ -42,6 +42,3 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 </div>
 
 <?php require "includes/repetitions/footer.php"; ?>
-
-<!--
-    INSERT INTO users VALUES ('user', 'username', 'user@user.com', '$2y$10$nhEEgeCw5lwvQY2xOf4iiO8GzMaolrKliQN6yd0yctAIiVVneVyAi') -->
