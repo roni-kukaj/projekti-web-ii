@@ -1,6 +1,12 @@
 <?php  
 require("../db/db_connection.php");
 require("../validation/validation.php");
+if(!isset($_SESSION['user_name'])){
+    ?>
+   <script>
+    window.location.replace('index.php');
+   </script>
+<?php }
 
 if(isset($_POST['update'])){
     session_start();
