@@ -68,7 +68,7 @@
                                 <img class="card-img rounded-0 img-fluid h-100 w-100" src="<?php echo $row['picture']; ?>">
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="far fa-eye"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $row['id']; ?>"><i class="far fa-eye"></i></a></li>
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
@@ -86,6 +86,7 @@
                                 </ul>
                                 <p class="">Available: <?php echo $row['quantity'];?></p>
                                 <p>Gender: <?php echo $row['gender'];?></p>
+                                <hr>
                                 <h4 class="text-center text-success mb-0"><b>$<?php echo $row['price']; ?></b></h4>
                             </div>
                         </div>    
