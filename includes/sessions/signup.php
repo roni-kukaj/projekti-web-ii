@@ -6,10 +6,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     $name = $_POST['name'];
     $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password'])){
+    if(isset($_POST['name']) && isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['confirm_password'])){
         function validate($data) {
             $data = trim($data);
             $data = stripslashes($data);
@@ -19,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     $name = validate($_POST['name']);
     $username = validate($_POST['username']);
+    $email = validate($_POST['email']);
     $password = validate($_POST['password']);
     $confirm_password = validate($_POST['confirm_password']);
 
@@ -28,6 +30,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
     if(empty($username)){
         header("Location: ../../signup-page.php?error=Username is empty!");
+        exit();
+    }
+    if(empty($email)){
+        header("Location: ../../signup-page.php?error=Email is empty!");
         exit();
     }
     if(empty($password)){
@@ -45,7 +51,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
     
-    $sql = "INSERT INTO users (emri, mbiemri, password) VALUES ('$name', '$username', '$password')";
+    $sql = "INSERT INTO users (emri, mbiemri, email, password) VALUES ('$name', '$username', '$email', '$password')";
     $result = mysqli_query($conn, $sql);
 
     if($result){
