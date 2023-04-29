@@ -11,6 +11,7 @@ if(isset($_POST['update'])){
         $_SESSION['user_name'] = $_POST['emri'];
         $_SESSION['mbiemri'] = $_POST['mbiemri'];
         header("Location: ../../profile.php");
+        
         exit();
     }else{
         echo "Data not updated";

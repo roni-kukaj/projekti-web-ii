@@ -26,6 +26,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                 <th>Size</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -37,15 +38,21 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                     <td><?php echo $row['size']; ?></td>
                     <td><?php echo $row['quantity']; ?></td>
                     <td><?php echo $row['price']; ?></td>
-                
+                    <td>
+                        <!-- <button type="submit" class="btn btn-link">More...</button> -->
+                        <a href="product-info.php?product_id=<?php echo $row['id'];?>" class="btn btn-link">More...</a>
+                    </td>
                 </tr>
             <?php } ?>
 
    
         <p>
     <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Add Product</a>
+
+
     <input type="hidden" name="id" value="1"> 
-  <a class="btn btn-primary" type="delete" name="delete">Delete</a>
+   
+                
 </p>
 
 <div class="collapse" id="collapseExample">
