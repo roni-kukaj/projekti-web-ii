@@ -31,6 +31,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['email']) && isset($_POS
         if($row['email'] === $email && password_verify($password, $row['password'])){
             $_SESSION['user_email'] = $row['email'];
             $_SESSION['user_name'] = $row['emri'];
+            $_SESSION['user_lastname'] = $row['mbiemri'];
             $_SESSION['id'] = $row['id'];
             $_SESSION['profile_picture'] = $row['profile_picture'];
             header("Location: ../../index.php");

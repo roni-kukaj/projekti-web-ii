@@ -1,65 +1,60 @@
-<?php
-    include("../repetitions/header.php"); 
-    if(!isset($_SESSION['user_name'])){
- ?>
-<script>
- window.location.replace('index.php');
-</script>
-<?php } ?>
-
-<link rel="apple-touch-icon" href="../../assets/images/apple-icon.png">
-<link rel="shortcut icon" type="image/x-icon" href="../../assets/images/shoe-favicon.png">
-
-<link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="../../assets/css/templatemo.css">
-<link rel="stylesheet" href="../../assets/css/custom.css">
-<link rel="stylesheet" href="../../assets/css/index.css">
-
-    <!-- Load fonts style after rendering the layout styles -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
-<link rel="stylesheet" href="../../assets/css/fontawesome.min.css"> 
- 
-
-
-<?php
+<?php  
 require("../db/db_connection.php");
-$sql = "SELECT * FROM users WHERE id = '".$_GET['id']."'";
-    $result = mysqli_query($conn, $sql);
-    if(mysqli_num_rows($result) === 1)
-        $data = mysqli_fetch_assoc($result);
+require("../validation/validation.php");
+
+if(isset($_POST['update'])){
+    session_start();
+
+    function validate($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    if(!empty($_POST['oldpassword'])){
+        $old_password = validate($_POST['oldpassword']);
+    }
+    
+
+
+    if(!validate_firstname($_POST['emri'])){
+        header("Location: ../../update-page.php?error=The name you have entered is not valid!");
+        exit();
+    }
+    if(!validate_lastname($_POST['mbiemri'])){
+        header("Location: ../../update-page.php?error=The lastname you have entered is not valid!");
+        exit();
+    }
+    if(!empty($_POST['password'] && !empty($_POST['confirmpassword']))){
+        $password = validate($_POST['password']);
+        $confirm_password = validate($_POST['confirmpassword']);
+
+        if(!validate_password($password)){
+            header("Location: ../../update-page.php?error=The password must be a combination of uppercase and lowercase letters, numbers, and symbols!");
+            exit();
+        }
+        if($password !== $confirm_password){
+            header("Location: ../../update-page.php?error=The passwords do not match!");
+            exit();
+        }
+            $sql = "UPDATE users SET password='".password_hash($password, PASSWORD_BCRYPT)."' WHERE id=".$_GET['id'];
+            mysqli_query($conn,$sql);
+    }
+
+    
+    $query = "UPDATE users SET emri='".$_POST['emri']."', mbiemri='".$_POST['mbiemri']."' WHERE id=".$_GET['id'];
+
+    $query_run = mysqli_query($conn,$query);
+    
+    if($query_run){
+        $_SESSION['user_name'] = $_POST['emri'];
+        $_SESSION['user_lastname'] = $_POST['mbiemri'];
+        header("Location: ../../profile.php");
+        
+        exit();
+    }else{
+        header("Location: ../../update-page.php?error=Something went wrong!");
+    }
+}
 ?>
-
-                    <form action="update-user.php ?id=<?php echo $_GET['id']; ?>" method="POST">
-                        <div class="container">
-                            <label class="form-label my-1" for="emri-input" ><b>Emri </b></label>
-                            <input type="text" class="form-control my-1" id="emri" name="emri" value="<?php echo $data['emri']; ?>">
-                            
-
-                            <label class="form-label my-1" for="mbiemri-input"><b>Mbiemri </b></label>
-                            <input type="text" class="form-control my-1" id="mbiemri" name="mbiemri" value="<?php echo $data['mbiemri']; ?>">
-                           
-
-                            <label for="password-input" class="form-label my-1" style="width:5px;"><b>Password </b></label>
-                            <input type="password" id="password-input" class="form-control my-1" name="password" value="">
-                           
-
-                            <!-- <label for="profike-picture" class="form-label my-1" style="width:5px;"><b>Profile-Picture </b></label>
-                            <input type="password" id="password-input" class="form-control my-1" name="password">
-                            <p id="password-error-msg" style="display: none;" class="text-danger">This field is required</p> -->
-
-                            <p id="login-error-msg" class="mt-1 text-danger" style="display: block;">
-                            <?php 
-                                if(isset($_GET['error'])){
-                                    echo $_GET['error'];
-                                }
-                            ?>
-                            </p>
-                            <div>
-                                <button type="submit" name="update" class="login btn btn-success mt-2" id="login-form-submit">Update</button>
-                            </div>
-                        </div>
-                            </form>
-</div> 
-
-
- <?php require("../repetitions/footer.php"); ?>

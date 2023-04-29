@@ -94,7 +94,7 @@
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
-                <a href="#"><img src="assets/images/boots.jpg" class="rounded-circle border"></a>
+                <a href="#"><img src="assets/images/boots_1.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Boots</h2>
                 <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
             </div>

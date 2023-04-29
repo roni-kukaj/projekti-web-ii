@@ -17,7 +17,7 @@ function validate_email($email){
 }
 
 function validate_password($password){
-    if (preg_match("/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])(?!.*[.\s]).{8,}$/", $password)) {
+    if (preg_match("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#+\-^_])[A-Za-z\d@$!%*?&#+\-^_]{8,}$/", $password)) {
         return true;
     } else {
         return false;
