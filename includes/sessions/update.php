@@ -21,18 +21,15 @@
  
 
 
-
-<?php 
+<?php
 require("../db/db_connection.php");
-
-
-    $sql = "SELECT * FROM users WHERE emri = '".$_GET['emri']."', mbiemri = '".$_GET['mbiemri']."', password = '".$_GET['password']."'";
+$sql = "SELECT * FROM users WHERE id = '".$_GET['id']."'";
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) === 1)
         $data = mysqli_fetch_assoc($result);
 ?>
 
-                    <fieldset>
+                    <form action="update-user.php ?id=<?php echo $_GET['id']; ?>" method="POST">
                         <div class="container">
                             <label class="form-label my-1" for="emri-input" ><b>Emri </b></label>
                             <input type="text" class="form-control my-1" id="emri" name="emri" value="<?php echo $data['emri']; ?>">
@@ -43,7 +40,7 @@ require("../db/db_connection.php");
                            
 
                             <label for="password-input" class="form-label my-1" style="width:5px;"><b>Password </b></label>
-                            <input type="password" id="password-input" class="form-control my-1" name="password" value="<?php echo $data['password']; ?>">
+                            <input type="password" id="password-input" class="form-control my-1" name="password" value="">
                            
 
                             <!-- <label for="profike-picture" class="form-label my-1" style="width:5px;"><b>Profile-Picture </b></label>
@@ -61,25 +58,8 @@ require("../db/db_connection.php");
                                 <button type="submit" name="update" class="login btn btn-success mt-2" id="login-form-submit">Update</button>
                             </div>
                         </div>
-                    </fieldset>
+                            </form>
 </div> 
-<?php
-require("../db/db_connection.php");
 
-if(isset($_POST['update'])){
-    
-    $query = "UPDATE 'products' SET emri='".$_POST[emri]."', mbiemri='".$_POST[mbiemri]."', password='".$_POST[password]."'";
-
-    $query_run = mysqli_query($conn,$query);
-
-    if($query_run){
-        echo "Data updated";
-    }else{
-        echo "Data not updated";
-    }
-}
-
-
-?>
 
  <?php require("../repetitions/footer.php"); ?>
