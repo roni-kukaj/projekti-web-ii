@@ -6,6 +6,7 @@ if(!isset($_SESSION['user_name'])){
 
 if(isset($_POST['update'])){
     session_start();
+    $errors = array();
 
     function validate($data) {
         $data = trim($data);
@@ -14,15 +15,7 @@ if(isset($_POST['update'])){
         return $data;
     }
 
-    if(!validate_firstname($_POST['emri'])){
-        header("Location: ../../update-page.php?error=The name you have entered is not valid!");
-        exit();
-    }
-    if(!validate_lastname($_POST['mbiemri'])){
-        header("Location: ../../update-page.php?error=The lastname you have entered is not valid!");
-        exit();
-    }
-    if(!empty($_POST['oldpassword']) && !empty($_POST['password'] && !empty($_POST['confirmpassword']))){
+    if(!empty($_POST['oldpassword']) && !empty($_POST['password'] && !empty($_POST['confirmpassword'])) && empty($errors)){
 
         $old_password = validate($_POST['oldpassword']);
         $verify_query = "SELECT * FROM users WHERE id = ".$_GET['id'];
@@ -30,30 +23,39 @@ if(isset($_POST['update'])){
         if(mysqli_num_rows($result) === 1){
             $row = mysqli_fetch_assoc($result);
             if(!password_verify($old_password, $row['password'])){
-                header("Location: ../../update-page.php?error=The password is incorrect!");
-                exit();
+                $errors['oldpassword_error'] = "The password is incorrect";
             }
         }
         else{
-            header("Location: ../../update-page.php?error=Something went wrong!");
-            exit();
+            $errors['error'] = "Something went wrong!";
         }
 
         $password = validate($_POST['password']);
         $confirm_password = validate($_POST['confirmpassword']);
 
         if(!validate_password($password)){
-            header("Location: ../../update-page.php?error=The password must be a combination of uppercase and lowercase letters, numbers, and symbols!");
-            exit();
+            $errors['password_error'] = "The password must be a combination of uppercase and lowercase letters, numbers, and symbols!";
         }
         if($password !== $confirm_password){
-            header("Location: ../../update-page.php?error=The passwords do not match!");
-            exit();
+            $errors['confirmpassword_error'] = "The passwords do not match!";
+
         }
             $sql = "UPDATE users SET password='".password_hash($password, PASSWORD_BCRYPT)."' WHERE id=".$_GET['id'];
             mysqli_query($conn,$sql);
     }
+    if(!validate_firstname($_POST['emri'])){
+        $errors['emri_error'] = "Firstname is not valid!";
+    }
+    if(!validate_lastname($_POST['mbiemri'])){
+        $errors['mbiemri_error'] = "Lastname is not valid!";
+    }
 
+    if(!empty($errors)){
+        $query_string = http_build_query($errors);
+        $url = "../../update-page.php?".$query_string;
+        header("Location: {$url}");
+        exit();
+    }
     
     $query = "UPDATE users SET emri='".$_POST['emri']."', mbiemri='".$_POST['mbiemri']."' WHERE id=".$_GET['id'];
 

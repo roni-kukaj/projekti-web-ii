@@ -11,12 +11,10 @@
                     <fieldset>
                         <div class="container">
                             <label class="form-label my-1" for="email-input"><b>Email </b></label>
-                            <input type="text" class="form-control my-1" id="email-input" name="email">
-                            <p id="email-error-msg" style="display: none;" class="text-danger">This field is required</p>
+                            <input type="text" class="form-control my-1" id="email-input" name="email" required>
 
                             <label for="password-input" class="form-label my-1" style="width:5px;"><b>Password </b></label>
-                            <input type="password" id="password-input" class="form-control my-1" name="password">
-                            <p id="password-error-msg" style="display: none;" class="text-danger">This field is required</p>
+                            <input type="password" id="password-input" class="form-control my-1" name="password" required>
 
                             <p id="login-error-msg" class="mt-1 text-danger" style="display: block;">
                             <?php 
