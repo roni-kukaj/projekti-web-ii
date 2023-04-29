@@ -12,12 +12,6 @@ if(isset($_POST['update'])){
         return $data;
     }
 
-    if(!empty($_POST['oldpassword'])){
-        $old_password = validate($_POST['oldpassword']);
-    }
-    
-
-
     if(!validate_firstname($_POST['emri'])){
         header("Location: ../../update-page.php?error=The name you have entered is not valid!");
         exit();
@@ -26,7 +20,23 @@ if(isset($_POST['update'])){
         header("Location: ../../update-page.php?error=The lastname you have entered is not valid!");
         exit();
     }
-    if(!empty($_POST['password'] && !empty($_POST['confirmpassword']))){
+    if(!empty($_POST['oldpassword']) && !empty($_POST['password'] && !empty($_POST['confirmpassword']))){
+
+        $old_password = validate($_POST['oldpassword']);
+        $verify_query = "SELECT * FROM users WHERE id = ".$_GET['id'];
+        $result = mysqli_query($conn, $verify_query);
+        if(mysqli_num_rows($result) === 1){
+            $row = mysqli_fetch_assoc($result);
+            if(!password_verify($old_password, $row['password'])){
+                header("Location: ../../update-page.php?error=The password is incorrect!");
+                exit();
+            }
+        }
+        else{
+            header("Location: ../../update-page.php?error=Something went wrong!");
+            exit();
+        }
+
         $password = validate($_POST['password']);
         $confirm_password = validate($_POST['confirmpassword']);
 
