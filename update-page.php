@@ -16,7 +16,7 @@ $sql = "SELECT * FROM users WHERE id = '".$_SESSION['id']."'";
         $data = mysqli_fetch_assoc($result);
 ?>
 <div class="container m-5">
-    <form action="includes/sessions/update.php?id=<?php echo $data['id']; ?>" method="POST" class="row">
+    <form action="includes/sessions/update.php?id=<?php echo $data['id']; ?>" method="POST" class="row" enctype="multipart/form-data">
         <div class="col-md-4 d-flex align-items-center justify-content-center">
             <img src="<?php echo $data['profile_picture']; ?>" alt="Profile Picture" class="img w-50">
         </div>
@@ -41,9 +41,10 @@ $sql = "SELECT * FROM users WHERE id = '".$_SESSION['id']."'";
             <input type="password" id="confirm-password" class="form-control my-1" name="confirmpassword">
             <p class="text-danger"><?php if(isset($_GET['confirmpassword_error'])) echo $_GET['confirmpassword_error']; ?></p>            
                            
-            <!-- <label for="profike-picture" class="form-label my-1" style="width:5px;"><b>Profile-Picture </b></label>
-            <input type="password" id="password-input" class="form-control my-1" name="password">
-            <p id="password-error-msg" style="display: none;" class="text-danger">This field is required</p> -->
+            <label for="profile-picture-input" class="form-label my-1"><b>Profile Picture</b></label>
+            <input type="file" name="profilepicture" class="form-control">
+            <p class="text-danger"><?php if(isset($_GET['profilepicture_error'])) echo $_GET['profilepicture_error']; ?></p>
+
 
             <p id="login-error-msg" class="mt-1 text-danger" style="display: block;">
                 <?php 
