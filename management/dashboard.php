@@ -6,3 +6,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
         window.location.replace('index.php');
 </script>
 <?php } ?>
+
+
+
+<?php require "includes/repetitions/footer.php"; ?>

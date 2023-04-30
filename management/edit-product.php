@@ -24,7 +24,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h2>Edit Product</h2>
-            <form action="update_product.php?id=<?php echo $data['id']; ?>" method="post">
+            <form action="update-product.php?id=<?php echo $data['id']; ?>" method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $data['name']; ?>">

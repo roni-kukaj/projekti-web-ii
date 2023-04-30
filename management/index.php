@@ -50,6 +50,7 @@
                     </p>
                     <button type="submit" class="btn btn-success">Log In</button>
                 </form>
+                <p class="my-1">Return to <a href="../index.php" class="link-success">user view</a>!</p>
 			</div>
 		</div>
 	</div>

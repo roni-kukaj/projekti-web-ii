@@ -26,7 +26,7 @@ $sql = "UPDATE products SET name = '{$name}', gender = '{$gender}', size = '{$si
 mysqli_close($conn);
 }
 else{
-    header("Location: edit_product.php");
+    header("Location: edit-product.php");
     exit();
 }
 

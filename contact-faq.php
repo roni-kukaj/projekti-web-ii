@@ -41,21 +41,22 @@ if(isset($_POST['contact'])){
         $sql = "INSERT INTO FAQ(name, email, subject, message) VALUES ('{$firstname}', '{$email}', '{$subject}', '{$message}')";
 
         if(mysqli_query($conn, $sql)){
-            $response = array('status' => 'success');
-            echo json_encode($response);
+            header("Location: contact.php?status=success");
             exit();
         }
         else{
-            $response = array('status' => 'failed');
-            echo json_encode($response);
+            header("Location: contact.php?status=failed");
             exit();
         }
     }
     else{
-        $response = array('status' => 'error', 'errors' => $errors);
-        echo json_encode($response);
+        
+        $query_string = http_build_query($errors);
+        $url = "contact.php?".$query_string;
+        header("Location: {$url}");
         exit();
     }
 }
+
 
 ?>
