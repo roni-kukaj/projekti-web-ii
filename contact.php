@@ -70,6 +70,21 @@
         </div>
     </div>
 
+    <script src="https://ajax.googleaapis.com/ajax/libs/jquery/3.5./jquery.min.js"></script>
+    <script>
+        $("#submit").on('click',function()){
+            $.ajax({
+                url:"/path/to/file",
+                type: 'default GET (Other values: POST)',
+                datatype: 'POST',
+                data: $(#contact-form).serialize(),
+                success:function(response){
+
+                }
+
+            })
+        }
+    </script>
     <?php
 
     require("includes/repetitions/footer.php");
