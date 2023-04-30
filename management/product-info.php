@@ -35,21 +35,34 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
         </div>
     </div>
     <div class="row w-25">
+    <div class="col">
         <button class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Delete Product</button>
-        <div class="collapse mt-3 border p-3 rounded" id="collapseExample">
-            Are you sure you want to delete this product?
-            <br><br>
-            <form action="delete-product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
-                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+    </div>
 
-                <button type="submit" class="btn btn-danger">Delete</button>
-            </form>
-        </div>
-        <p class="text-danger">
-            <?php
-                if(isset($_GET['error']))
-                    echo $_GET['error'];
-            ?>
+    <div class="col">
+        
+    <form action="edit-product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
+         <button class="btn btn-primary me-2">Edit Product</button>
+     </form>
+        
+    </div>
+
+    <div class="collapse mt-3 border p-3 rounded" id="collapseExample">
+        Are you sure you want to delete this product?
+        <br><br>
+        <form action="delete-product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </div>
+    <p class="text-danger">
+        <?php
+            if(isset($_GET['error']))
+                echo $_GET['error'];
+        ?>
+    </p>
+</div>
         </p>
     </div>
 </div>
