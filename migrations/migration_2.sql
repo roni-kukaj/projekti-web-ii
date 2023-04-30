@@ -2,8 +2,8 @@ INSERT INTO `products`(`name`, `gender`, `size`, `quantity`, `price`, `picture`)
 
 CREATE TABLE cart(
 	id INTEGER AUTO_INCREMENT,
-    user_id INTEGER,
-    product_id INTEGER,
+    user_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (product_id) REFERENCES products(id),
     PRIMARY KEY (id)
