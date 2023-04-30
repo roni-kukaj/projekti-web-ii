@@ -14,7 +14,7 @@ $sql = "UPDATE products SET name = '{$name}', gender = '{$gender}', size = '{$si
 
     if (mysqli_query($conn, $sql)) {
         ?><script>
-            window.location.replace('edit_product.php');
+            window.location.replace('edit-product.php');
             
         </script>
         <?php
