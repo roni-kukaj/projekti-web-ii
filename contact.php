@@ -63,7 +63,7 @@
                 </div>
                 <div class="row">
                     <div class="col text-end mt-2">
-                        <button type="submit" class="btn btn-success btn-lg px-3" name="contact">Let's Talk</button>
+                        <button id="submit" type="submit" class="btn btn-success btn-lg px-3" name="contact">Let's Talk</button>
                     </div>
                 </div>
             </form>
@@ -74,9 +74,8 @@
     <script>
         $("#submit").on('click',function()){
             $.ajax({
-                url:"/path/to/file",
-                type: 'default GET (Other values: POST)',
-                datatype: 'POST',
+                url: 'http://localhost/projekti-web-ii/contact.php',
+                type: 'POST',
                 data: $(#contact-form).serialize(),
                 success:function(response){
 
