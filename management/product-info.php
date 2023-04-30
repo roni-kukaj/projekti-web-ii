@@ -34,17 +34,19 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
             </ul>
         </div>
     </div>
+    
     <div class="row w-25">
     <div class="col">
         <button class="btn btn-danger" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Delete Product</button>
     </div>
 
     <div class="col">
-        
-    <form action="edit-product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
-         <button class="btn btn-primary me-2">Edit Product</button>
-     </form>
-        
+        <form action="edit_product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
+            <button href="#collapseExample1" class="btn btn-primary me-2">Edit Product</button>
+        </form>    
+    </div>
+
+        </form>
     </div>
 
     <div class="collapse mt-3 border p-3 rounded" id="collapseExample">
