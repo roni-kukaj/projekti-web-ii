@@ -49,6 +49,16 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
             ?>
         </p>
     </div>
+    <div class="row">
+    <h3>Orders</h3>
+	<table>
+		<tr>
+			<th>User ID</th>
+			<th>Product Name</th>
+			<th>Quantity</th>
+			<th>Price</th>
+		</tr>
+    </div>
 </div>
 
 
