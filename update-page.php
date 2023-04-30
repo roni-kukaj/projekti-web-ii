@@ -16,7 +16,7 @@ $sql = "SELECT * FROM users WHERE id = '".$_SESSION['id']."'";
         $data = mysqli_fetch_assoc($result);
 ?>
 <div class="container m-5">
-    <form action="includes/sessions/update.php?id=<?php echo $data['id']; ?>" method="POST" class="row" enctype="multipart/form-data">
+    <form action="includes/sessions/update.php" method="POST" class="row" enctype="multipart/form-data">
         <div class="col-md-4 d-flex align-items-center justify-content-center">
             <img src="<?php echo $data['profile_picture']; ?>" alt="Profile Picture" class="img w-50">
         </div>
