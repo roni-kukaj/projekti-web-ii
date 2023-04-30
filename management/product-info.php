@@ -41,11 +41,10 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     </div>
 
     <div class="col">
-        <form action="edit_product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
+        <form action="edit-product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
             <button href="#collapseExample1" class="btn btn-primary me-2">Edit Product</button>
         </form>    
     </div>
-
         </form>
     </div>
 
@@ -54,7 +53,6 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
         <br><br>
         <form action="delete-product.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
             <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
-
             <button type="submit" class="btn btn-danger">Delete</button>
         </form>
     </div>
