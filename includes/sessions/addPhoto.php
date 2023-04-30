@@ -1,9 +1,9 @@
-<?php if(!empty($_FILES['profilepicture']['name'])) {
-        if(isset($_FILES['profilepicture']) && empty($errors)){
-            $file_name = $_FILES['profilepicture']['name'];
-            $file_type = $_FILES['profilepicture']['type'];
-            $file_size = $_FILES['profilepicture']['size'];
-            $file_tmp = $_FILES['profilepicture']['tmp_name'];
+<?php if(!empty($_FILES['updatePhoto']['name'])) {
+        if(isset($_FILES['updatePhoto']) && empty($errors)){
+            $file_name = $_FILES['updatePhoto']['name'];
+            $file_type = $_FILES['updatePhoto']['type'];
+            $file_size = $_FILES['updatePhoto']['size'];
+            $file_tmp = $_FILES['updatePhoto']['tmp_name'];
             $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
             $allowed_exts = array('jpg', 'jpeg', 'png', 'gif');
             $max_file_size = 5000000; // 5 MB
