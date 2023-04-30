@@ -26,11 +26,12 @@ if(mysqli_num_rows($result) === 1){
                         <li class="list-group-item">Gender: <b><?php echo $data['gender']; ?></b></li>
                         <li class="list-group-item">Quantity: <b><?php echo $data['quantity']; ?></b></li>
                         <li class="list-group-item">Size available: <b><?php echo $data['size']; ?></b></li>
+                        <li class="list-group-item">Price: <b class="text-success">$<?php echo $data['price']; ?></b></li>
                     </ul>
                     <hr>
                     <div class="d-flex flex-start">
                         <a href="shop.php" class="btn btn-secondary w-25 mr-3">Cancel</a>
-                        <a href="" class="btn btn-success w-25 mx-3">Order Now</a>
+                        <a href="includes/sessions/add-cart.php?product_id=<?php echo $data['id']; ?>" class="btn btn-success w-25 mx-3">Add to Cart</a>
                     </div>
                 </div>
             </div>
