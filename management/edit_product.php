@@ -24,7 +24,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h2>Edit Product</h2>
-            <form action="update-product.php?id=<?php echo $data['id']; ?>" method="post">
+            <form action="update_product.php?id=<?php echo $data['id']; ?>" method="post">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" name="name" value="<?php echo $data['name']; ?>">
@@ -32,8 +32,8 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                 <div class="form-group">
                     <label for="gender">Gender</label>
                     <select class="form-control" id="gender" name="gender">
-                        <option value="M" <?php if($data['gender'] === 'M') echo 'selected'; ?>>Male</option>
-                        <option value="F" <?php if($data['gender'] === 'F') echo 'selected'; ?>>Female</option>
+                        <option value="Male" <?php if($data['gender'] === 'Male') echo 'selected'; ?>>Male</option>
+                        <option value="Female" <?php if($data['gender'] === 'Female') echo 'selected'; ?>>Female</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -50,7 +50,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                     <input type="number" class="form-control" id="price" name="price" value="<?php echo $data['price']; ?>">
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Update Product</button>
+                    <button name="update" type="submit" class="btn btn-primary">Update Product</button>
             </form>
         </div>
     </div>
