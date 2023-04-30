@@ -60,16 +60,17 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 		</tr>
     </div>
     <?php
-   $sql = "SELECT * FROM orders WHERE user_id = '".$_GET['user_id']."'";
+   $sql = "SELECT * FROM orders_view WHERE user_id = '".$_GET['user_id']."'";
    $result = mysqli_query($conn, $sql);
     
     if(mysqli_num_rows($result) > 0) {
-        while($products = mysqli_fetch_assoc($result)) {
+        while($orders = mysqli_fetch_assoc($result)) {
             echo "<tr>";
-            echo "<td>".$products['id']."</td>";
-            echo "<td>".$products['name']."</td>";
-            echo "<td>".$products['quantity']."</td>";
-            echo "<td>".$products['price']."</td>";
+            echo "<td>".$orders['id']."</td>";
+            echo "<td>".$orders['user_id']."</td>";
+            echo "<td>".$orders['order_date']."</td>";
+            echo "<td>".$orders['arrival_date']."</td>";
+            echo "<td>".$orders['address']."</td>";
             echo "</tr>";
         }
     } else {
