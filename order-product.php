@@ -42,7 +42,7 @@
                     </ul>
                     <hr>
                     <div class="d-flex justify-content-end">
-                        <a href="includes/sessions/remove-cart.php?product_id=<?php echo $data['id'] ?>" class="btn btn-danger">Remove From Cart</a>
+                        <a href="includes/sessions/remove-cart-order.php?product_id=<?php echo $data['id'] ?>" class="btn btn-danger">Remove From Order</a>
                     </div>
                 </div>
             </div>
@@ -51,24 +51,19 @@
     <?php }?>
 </div>
              <?php 
-                $sql = "SELECT price, quantity FROM orders";
+                $sql = "SELECT * FROM orders";
                 $result = mysqli_query($conn, $sql);
                 
-                
-                $total_price = 0;
-                
-               
+                // Calculate the total price of all items in the order
+                $total = 0;
                 if (mysqli_num_rows($result) > 0) {
                   while($row = mysqli_fetch_assoc($result)) {
-                    $total_price += $row['price'] * $row['quantity'];
+                    $total += $row["price"] * $row["quantity"];
                   }
                 }
                 
-         
-                echo "Total price of ordered products: $" . number_format($total_price, 2);
-                
-    
-                mysqli_close($conn);
+                // Display the total price
+                echo "Total price of all ordered products: $" . number_format($total, 2);
              ?>
 
 <div class="container my-4">
