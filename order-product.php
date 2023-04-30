@@ -1,4 +1,6 @@
 <?php
+     require("includes/db/db_connection.php");
+     require("includes/repetitions/header.php"); 
     if(!isset($_SESSION['user_name'])){ ?>
         <script>window.location.replace("login-page.php");</script>
     <?php } 
@@ -19,3 +21,39 @@
 <?php
     }
 ?>
+
+
+<div class="container my-5">
+    <?php while($data = mysqli_fetch_assoc($result)) {?>
+    <div class="card my-2">
+        <div class="row g-0">
+            <div class="col-md-3">
+                <img src="<?php echo $data['picture']; ?>" alt="Product image" class="card-img w-75 m-2">
+            </div>
+            <div class="col-md-9">
+                <div class="card-body d-flex flex-column">
+                    <h3 class="card-title mt-1"><?php echo $data['name']; ?></h3>
+                    <hr>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Gender: <b><?php echo $data['gender']; ?></b></li>
+                        <li class="list-group-item">Quantity: <b><?php echo $data['quantity']; ?></b></li>
+                        <li class="list-group-item">Size available: <b><?php echo $data['size']; ?></b></li>
+                        <li class="list-group-item">Price: <b class="text-success">$<?php echo $data['price']; ?></b></li>
+                    </ul>
+                    <hr>
+                    <div class="d-flex justify-content-end">
+                        <a href="includes/sessions/remove-cart.php?product_id=<?php echo $data['id'] ?>" class="btn btn-danger">Remove From Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php }?>
+</div>
+             
+
+<div class="container my-4">
+    <div class="d-flex flex-start">
+        <a href="" class="btn btn-success w-25 mx-3">Finish Order</a>
+    </div>
+</div>
