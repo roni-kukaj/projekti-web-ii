@@ -50,7 +50,26 @@
     </div>
     <?php }?>
 </div>
-             
+             <?php 
+                $sql = "SELECT price, quantity FROM orders";
+                $result = mysqli_query($conn, $sql);
+                
+                
+                $total_price = 0;
+                
+               
+                if (mysqli_num_rows($result) > 0) {
+                  while($row = mysqli_fetch_assoc($result)) {
+                    $total_price += $row['price'] * $row['quantity'];
+                  }
+                }
+                
+         
+                echo "Total price of ordered products: $" . number_format($total_price, 2);
+                
+    
+                mysqli_close($conn);
+             ?>
 
 <div class="container my-4">
     <div class="d-flex flex-start">
