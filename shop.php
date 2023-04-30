@@ -9,25 +9,30 @@
     else {
         $sql = "SELECT * FROM products WHERE gender='".$_GET['filter']."'";
     }
+
     $result = mysqli_query($conn, $sql);
 ?>
+<?php if(isset($_GET['status'])){ ?>
+    <div class="container my-3">
+    <?php if($_GET['status'] === "success"){ ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            The product was added to your cart!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php } else if($_GET['status'] === "failed") {?>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            The product could not be added to your cart!
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+        </div>
+    <?php } ?>
+    </div>
+<?php } ?>
 
 <div class="container py-5">
         <div class="row">
             <div class="col-lg-3">
                 <h1 class="h2 pb-4">Categories</h1>
-                <ul class="list-unstyled templatemo-accordion">
-                    <li class="pb-3">
-                        <a class="collapsed d-flex justify-content-between h3 text-decoration-none" href="#">
-                            Gender
-                            <i class="fa fa-fw fa-chevron-circle-down mt-1"></i>
-                        </a>
-                        <ul class="collapse show list-unstyled pl-3">
-                            <li><a class="text-decoration-none" href="#">Men</a></li>
-                            <li><a class="text-decoration-none" href="#">Women</a></li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
 
             <div class="col-lg-9">
@@ -35,23 +40,15 @@
                     <div class="col-md-6">
                         <ul class="list-inline shop-top-menu pb-3 pt-1">
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">All</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="<?php echo $_SERVER['PHP_SELF']; ?>">All</a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none mr-3" href="#">Men's</a>
+                                <a class="h3 text-dark text-decoration-none mr-3" href="<?php echo $_SERVER['PHP_SELF']."?filter=Male"; ?>">Men's</a>
                             </li>
                             <li class="list-inline-item">
-                                <a class="h3 text-dark text-decoration-none" href="#">Women's</a>
+                                <a class="h3 text-dark text-decoration-none" href="<?php echo $_SERVER['PHP_SELF']."?filter=Female"; ?>">Women's</a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="col-md-6 pb-4">
-                        <div class="d-flex">
-                            <select class="form-control">
-                                <option>Featured</option>
-                                <option>A to Z</option>
-                            </select>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -69,7 +66,7 @@
                                 <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
                                     <ul class="list-unstyled">
                                         <li><a class="btn btn-success text-white mt-2" href="shop-single.php?product_id=<?php echo $row['id']; ?>"><i class="far fa-eye"></i></a></li>
-                                        <li><a class="btn btn-success text-white mt-2" href="shop-single.html"><i class="fas fa-cart-plus"></i></a></li>
+                                        <li><a class="btn btn-success text-white mt-2" href="includes/sessions/add-cart.php?product_id=<?php echo $row['id']; ?>"><i class="fas fa-cart-plus"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -119,3 +116,10 @@
     require("includes/repetitions/footer.php");
 
 ?>
+<script>
+    $(document).ready(function(){
+        $('#selected').on('change', function(){
+            $('#order-form').submit();
+        })
+    });
+</script>

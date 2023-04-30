@@ -1,6 +1,11 @@
 <?php
 require("includes/repetitions/header.php"); 
 require("includes/db/db_connection.php");
+
+if(!isset($_SESSION['user_name'])){ ?>
+   <script>window.location.replace("login-page.php");</script>
+<?php }
+
 $sql = "SELECT * FROM products WHERE id=".$_GET['product_id'];
 $result = mysqli_query($conn, $sql);
 if(mysqli_num_rows($result) === 1){
