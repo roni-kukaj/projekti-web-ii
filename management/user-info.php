@@ -49,9 +49,9 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
             ?>
         </p>
     </div>
-    <div class="row">
-    <h3>Orders</h3>
-	<table>
+    <div class="row mt-5">
+    <h3>User orders</h3>
+	<table class="mt-3">
 		<tr>
 			<th>User ID</th>
 			<th>Product Name</th>
@@ -59,6 +59,18 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 			<th>Price</th>
 		</tr>
     </div>
+    <?php
+    $sql = "SELECT * FROM orders WHERE user_id = '".$_GET['user_id']."'";
+    $result = mysqli_query($conn, $sql);
+    while($order = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>".$order['user_id']."</td>";
+        echo "<td>".$order['product_name']."</td>";
+        echo "<td>".$order['quantity']."</td>";
+        echo "<td>".$order['price']."</td>";
+        echo "</tr>";
+    }
+?>
 </div>
 
 
