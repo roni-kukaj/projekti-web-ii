@@ -28,7 +28,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
             <ul class="list-unstyled">
                 <li>Emri: <b><?php echo $data['emri']; ?></b></li>
                 <li>Mbiemri: <b><?php echo $data['mbiemri']; ?></b></li>
-                <li>Email: <b><?php echo $data['emri']; ?></b></li>
+                <li>Email: <b><?php echo $data['email']; ?></b></li>
             </ul>
         </div>
     </div>
@@ -60,18 +60,18 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 		</tr>
     </div>
     <?php
-    $sql = "SELECT * FROM orders WHERE user_id = '".$_GET['user_id']."'";
+    $sql = "SELECT * FROM users WHERE id = '".$_GET['user_id']."'";
     $result = mysqli_query($conn, $sql);
-    while($order = mysqli_fetch_assoc($result)) {
+    while($products = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>".$order['user_id']."</td>";
-        echo "<td>".$order['product_name']."</td>";
-        echo "<td>".$order['quantity']."</td>";
-        echo "<td>".$order['price']."</td>";
+        echo "<td>".$products['id']."</td>";
+        echo "<td>".$products['name']."</td>";
+        echo "<td>".$products['quantity']."</td>";
+        echo "<td>".$products['price']."</td>";
         echo "</tr>";
     }
 ?>
 </div>
-
+</div>
 
 <?php require "includes/repetitions/footer.php"; ?>
