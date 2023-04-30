@@ -38,7 +38,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
             Are you sure you want to delete this user?
             <br><br>
             <form action="delete-user.php?id=<?php echo $data['id']; ?>" method="post" class="mt-1">
-                <button class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Cancel</button>
                 <button type="submit" class="btn btn-danger">Delete</button>
             </form>
         </div>
