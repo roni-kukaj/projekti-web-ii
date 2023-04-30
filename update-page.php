@@ -41,9 +41,9 @@ $sql = "SELECT * FROM users WHERE id = '".$_SESSION['id']."'";
             <input type="password" id="confirm-password" class="form-control my-1" name="confirmpassword">
             <p class="text-danger"><?php if(isset($_GET['confirmpassword_error'])) echo $_GET['confirmpassword_error']; ?></p>            
                            
-            <label for="profile-picture-input" class="form-label my-1"><b>Profile Picture</b></label>
-            <input type="file" name="profilepicture" class="form-control">
-            
+            <label for="update-input" class="form-label my-1"><b>Profile Picture</b></label>
+            <input type="file" name="updatePhoto" class="form-control">
+
             <p class="text-danger"><?php if(isset($_GET['profilepicture_error'])) echo $_GET['profilepicture_error']; ?></p>
 
 
