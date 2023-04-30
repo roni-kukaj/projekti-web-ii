@@ -8,6 +8,7 @@
 
 
 <?php
+    $total_price = 0;
     $sql_ = "SELECT product_id FROM cart WHERE user_id=".$_SESSION['id'];
     $result_ = mysqli_query($conn, $sql_);
     $ids = array();
@@ -16,7 +17,7 @@
         $id_list = "'".implode("', '", $ids)."'";
         $sql = "SELECT * FROM products WHERE id IN ($id_list)";
         $result = mysqli_query($conn, $sql);  
-        print_r($result);
+        
 ?>
 <?php
     }
@@ -48,26 +49,15 @@
             </div>
         </div>
     </div>
-    <?php }?>
+    <?php $total_price += $data['price'];}?>
 </div>
-             <?php 
-                $sql = "SELECT * FROM orders";
-                $result = mysqli_query($conn, $sql);
-                
-                // Calculate the total price of all items in the order
-                $total = 0;
-                if (mysqli_num_rows($result) > 0) {
-                  while($row = mysqli_fetch_assoc($result)) {
-                    $total += $row["price"] * $row["quantity"];
-                  }
-                }
-                
-                // Display the total price
-                echo "Total price of all ordered products: $" . number_format($total, 2);
-             ?>
-
+           
+        
 <div class="container my-4">
     <div class="d-flex flex-start">
+        <?php 
+            echo $total_price;
+        ?>
         <a href="" class="btn btn-success w-25 mx-3">Finish Order</a>
     </div>
 </div>
