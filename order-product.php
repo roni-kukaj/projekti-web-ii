@@ -54,14 +54,11 @@
            
         
 <div class="container text-center">
-    
-             <h3 class="text-success mb-5">Total price: $<?php echo $total_price;?></h3>
-             <hr>
-
-    <div >
-        <a href=""  class="btn btn-success w-25 mx-3 mt-5">Finish Order</a>
-    </div>
+    <h3 class="text-success mb-5">Total price: $<?php echo $total_price;?></h3>
+        <hr>
+    <form method="post" action="">
+        <a href="" class="btn btn-success w-25 mx-3 mt-5">Finish Order</a>
+    </form>
 </div>
 
-<br><br>
 <?php require "includes/repetitions/footer.php"; ?>

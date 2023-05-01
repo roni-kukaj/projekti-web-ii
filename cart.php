@@ -23,6 +23,7 @@ if(!isset($_SESSION['user_name'])){ ?>
 <?php } ?>
 
 <?php
+    $total_price = 0;
     $sql_ = "SELECT product_id FROM cart WHERE user_id=".$_SESSION['id'];
     $result_ = mysqli_query($conn, $sql_);
     $ids = array();
@@ -31,6 +32,7 @@ if(!isset($_SESSION['user_name'])){ ?>
         $id_list = "'".implode("', '", $ids)."'";
         $sql = "SELECT * FROM products WHERE id IN ($id_list)";
         $result = mysqli_query($conn, $sql);
+        echo $_COOKIE['order_address'];
 ?>
 
 <div class="container my-5">
@@ -58,11 +60,22 @@ if(!isset($_SESSION['user_name'])){ ?>
             </div>
         </div>
     </div>
-    <?php }?>
+    <?php $total_price += $data['price'];}?>
 </div>
 <div class="container my-4">
-    <div class="d-flex flex-start">
-        <a href="" class="btn btn-success w-25 mx-3">Finish Order</a>
+    <h3 class="text-success mb-5 d-flex justify-content-end">Total price: $<?php echo $total_price;?></h3>
+    <div class="text-right">
+        <a href="" class="btn btn-success w-25 mx-3 my-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Order Now</a>
+            <p class="text-danger"><?php if(isset($_GET['error'])) echo $_GET['error']; ?></p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                <form action="includes/sessions/order-products.php" method="post">
+                    <?php $_SESSION['total_price'] = $total_price; ?>
+                    <input type="text" placeholder="Write your address here!" class="form-control" name="address" value="<?php if(isset($_COOKIE['order_address'])) echo $_COOKIE['order_address']; ?>"; required>
+                    <button type="submit" class="btn btn-success my-2">Finish Order</button>
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
