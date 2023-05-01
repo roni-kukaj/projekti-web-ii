@@ -31,6 +31,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
                 <li>Size: <b><?php echo $data['size']; ?></b></li>
                 <li>Quantity: <b><?php echo $data['quantity']; ?></b></li>
                 <li>Price: <b><?php echo $data['price']; ?></b></li>
+                <li>Picture: <?php echo $data['picture'] ?></li>
             </ul>
         </div>
     </div>
