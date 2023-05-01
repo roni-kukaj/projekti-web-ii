@@ -1,4 +1,11 @@
-<?php require("includes/repetitions/header.php"); ?>
+<?php require("includes/repetitions/header.php"); 
+
+if(isset($_SESSION['role'])){
+    ?>
+        <script>window.location.replace("management/dashboard.php");</script>
+    <?php
+}
+?>
 
 <div class="container my-5">
     <div class="row">

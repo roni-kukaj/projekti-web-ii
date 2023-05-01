@@ -6,7 +6,7 @@ $result = mysqli_query($conn, $sql);
 $product_ids = array();
 setcookie('order_address', $_POST['address'], time() + (86400 * 30), '/');
 if(mysqli_num_rows($result) > 0){
-    $insert_order_query = "INSERT INTO orders(user_id, address, total_price) VALUES ({$_SESSION['id']}, '{$_POST['address']}', {$_SESSION['total_price']})";
+    $insert_order_query = "INSERT INTO orders(user_id, order_date, arrival_date, address, total_price) VALUES ({$_SESSION['id']}, NOW(), DATE_ADD(NOW(), INTERVAL 3 DAY), '{$_POST['address']}', {$_SESSION['total_price']})";
     if(mysqli_query($conn, $insert_order_query)){
         unset($_SESSION['total_price']);
         $get_order_id_query = "SELECT id FROM orders WHERE user_id={$_SESSION['id']} ORDER BY order_date DESC LIMIT 1";

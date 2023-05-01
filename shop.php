@@ -71,7 +71,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <a href="shop-single.html" class="h3 text-decoration-none"><b><?php echo $row['name']; ?></b></a>
+                                <a href="shop-single.php?=<?php echo $row['id']; ?>" class="h3 text-decoration-none"><b><?php echo $row['name']; ?></b></a>
                                 <ul class="w-100 list-unstyled d-flex justify-content-between mb-0">
                                     <li class="pt-2">
                                         <span class="product-color-dot color-dot-red float-left rounded-circle ml-1"></span>

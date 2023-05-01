@@ -4,6 +4,11 @@
     if(!isset($_SESSION['user_name'])){ ?>
         <script>window.location.replace("login-page.php");</script>
     <?php } 
+    if(isset($_SESSION['role'])){
+        ?>
+            <script>window.location.replace("management/dashboard.php");</script>
+        <?php
+    }
 ?>
 
 

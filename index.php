@@ -1,4 +1,10 @@
-<?php require("includes/repetitions/header.php"); ?>
+<?php require("includes/repetitions/header.php");
+if(isset($_SESSION['role'])){
+    ?>
+        <script>window.location.replace('management/dashboard.php');</script>
+    <?php
+}
+?>
 
  <!-- Start Banner Hero -->
     <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
@@ -20,7 +26,7 @@
                                 <h3 class="h2">Nike</h3>
                                 <p>
                                     Nike, is an American multinational corporation that is engaged in the design, development, manufacturing, and worldwide marketing and sales of footwear, apparel, equipment, accessories, and services. <a rel="sponsored" class="text-success" href="https://stories.freepik.com/" target="_blank">Freepik Stories</a>,
-                                    <a rel="sponsored" class="text-success" href="https://www.nike.com/" target="_blank">Nike</a> and
+                                    <a rel="sponsored" class="text-success" href="https://www.nike.com/" target="_blank">Nike</a>.
                                 </p>
                             </div>
                         </div>
@@ -86,17 +92,17 @@
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
                 <a href="#"><img src="assets/images/nikr.webp" class="rounded-circle border"></a>
                 <h5 class="text-center mt-3 mb-3">Sneakers</h5>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                <p class="text-center"><a href="shop.php" class="btn btn-success">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
                 <a href="#"><img src="assets/images/htop.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">High-tops</h2>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                <p class="text-center"><a href="shop.php" class="btn btn-success">Go Shop</a></p>
             </div>
             <div class="col-12 col-md-3 p-3 mt-3 mx-3">
                 <a href="#"><img src="assets/images/boots_1.jpg" class="rounded-circle border"></a>
                 <h2 class="h5 text-center mt-3 mb-3">Boots</h2>
-                <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                <p class="text-center"><a href="shop.php" class="btn btn-success">Go Shop</a></p>
             </div>
         </div>
     </section>

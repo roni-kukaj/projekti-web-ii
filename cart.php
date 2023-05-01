@@ -4,7 +4,13 @@ require "includes/db/db_connection.php";
 
 if(!isset($_SESSION['user_name'])){ ?>
     <script>window.location.replace("login-page.php");</script>
-<?php } ?>
+<?php } 
+if(isset($_SESSION['role'])){
+    ?>
+        <script>window.location.replace("management/dashboard.php");</script>
+    <?php
+}
+?>
 
 <?php if(isset($_GET['status'])){ ?>
     <div class="container my-3">
@@ -32,7 +38,6 @@ if(!isset($_SESSION['user_name'])){ ?>
         $id_list = "'".implode("', '", $ids)."'";
         $sql = "SELECT * FROM products WHERE id IN ($id_list)";
         $result = mysqli_query($conn, $sql);
-        echo $_COOKIE['order_address'];
 ?>
 
 <div class="container my-5">

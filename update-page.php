@@ -5,7 +5,13 @@
 <script>
  window.location.replace('index.php');
 </script>
-<?php } ?>
+<?php } 
+if(isset($_SESSION['role'])){
+    ?>
+        <script>window.location.replace("management/dashboard.php");</script>
+    <?php
+}
+?>
 
 <?php
 require("includes/db/db_connection.php");

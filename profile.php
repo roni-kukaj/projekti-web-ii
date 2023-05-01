@@ -1,11 +1,19 @@
 <?php
-    include("includes/repetitions/header.php"); 
+    include("includes/repetitions/header.php");
+    include("includes/db/db_connection.php");
     if(!isset($_SESSION['user_name'])){
 ?>
 <script>
     window.location.replace('index.php');
 </script>
-<?php } ?>
+<?php } 
+if(isset($_SESSION['role'])){
+    ?>
+        <script>window.location.replace("management/dashboard.php");</script>
+    <?php
+}
+?>
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-5 mx-auto my-4">
@@ -22,11 +30,35 @@
                     <form action="update-page.php?id=<?php echo $_SESSION['id']; ?>" method="post">
                         <button class="btn btn-success ml-auto">Update Your Information</button>
                     </form>
-                    <!-- Qetu ka mu desht me e kriju nje forme per me e bo update user information -->
-
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <?php
+            $sql = "SELECT * FROM orders_view WHERE user_id={$_SESSION['id']} GROUP BY id";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0){
+        ?>
+            <table class="table table-striped">
+                <thead>
+                    <th>Id</th>
+                    <th>Order Date</th>
+                    <th>Arrival Date</th>
+                    <th>Action</th>
+                </thead>
+                <?php while($row = mysqli_fetch_assoc($result)) { ?>
+                    <tr>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['order_date']; ?></td>
+                        <td><?php echo $row['arrival_date']; ?></td>
+                        <td><a href="order-details.php?id=<?php echo $row['id']; ?>">View details...</a></td>
+                    </tr>
+                <?php } ?>
+            </table>
+        <?php } else { ?>
+            <h4>You currently have no orders!</h4>
+        <?php } ?>
     </div>
 </div>
     

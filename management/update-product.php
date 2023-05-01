@@ -2,6 +2,12 @@
 require "includes/repetitions/header.php";
 require "includes/db/db_manager_connection.php";
 
+if(!isset($_SESSION['role'])){
+    ?>
+        <script>window.location.replace("management/index.php");</script>
+    <?php
+}
+
 if(isset($_POST['update'])){
     $id = $_GET['id'];
     $name = $_POST['name'];
