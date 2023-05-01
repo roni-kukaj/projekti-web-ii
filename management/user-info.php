@@ -53,10 +53,11 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     <h3>User orders</h3>
 	<table class="mt-3">
 		<tr>
+            <th>ID</th>
 			<th>User ID</th>
-			<th>Product Name</th>
-			<th>Quantity</th>
-			<th>Price</th>
+			<th>Order Date</th>
+			<th>Arrival Date</th>
+			<th>Address</th>
 		</tr>
     </div>
     <?php
