@@ -24,7 +24,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h2>Edit Product</h2>
-            <form action="update-product.php?id=<?php echo $data['id']; ?>" method="post">
+            <form action="update-product.php?id=<?php echo $data['id']; ?>" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label for="name">Name</label>
@@ -56,7 +56,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 
                 <div>
                     <label for="photo" class="form-label">Choose Photo:</label>
-                    <input type="file" class="form-control" id="photo" name="updatePhoto"  required >
+                    <input type="file" class="form-control" id="photo" name="updatePhoto">
                     <p class="text-danger"><?php if(isset($_GET['updatePhoto_error'])) echo $_GET['updatePhoto_error']; ?></p>
                 </div>
 

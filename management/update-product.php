@@ -9,9 +9,10 @@ if(isset($_POST['update'])){
     $size = $_POST['size'];
     $quantity = $_POST['quantity'];
     $price = $_POST['price'];
-    $errors=array();
-     if(!empty($_FILES['updatePhoto']['name'])) {
 
+    $errors=array();
+    
+    if(!empty($_FILES['updatePhoto']['name'])) {
         if(isset($_FILES['updatePhoto']) && empty($errors)){
             $file_name = $_FILES['updatePhoto']['name'];
             $file_type = $_FILES['updatePhoto']['type'];
@@ -53,12 +54,12 @@ if(isset($_POST['update'])){
             }
         }
     }
-   
+
 $sql = "UPDATE products SET name = '{$name}', gender = '{$gender}', size = '{$size}', quantity = '{$quantity}', price = '{$price}' WHERE id = '{$id}'";
 
     if (mysqli_query($conn, $sql)) {
         ?><script>
-            window.location.replace('edit-product.php');
+            // window.location.replace('edit-product.php');
             
         </script>
         <?php
@@ -70,7 +71,7 @@ $sql = "UPDATE products SET name = '{$name}', gender = '{$gender}', size = '{$si
 mysqli_close($conn);
 }
 else{
-    header("Location: edit-product.php");
+    // header("Location: edit-product.php");
     exit();
 }
 
