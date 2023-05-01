@@ -56,7 +56,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['role'])){
 
                 <div>
                     <label for="photo" class="form-label">Choose Photo:</label>
-                    <input type="file" class="form-control" id="photo" name="photo"  required >
+                    <input type="file" class="form-control" id="photo" name="updatePhoto"  required >
                     <p class="text-danger"><?php if(isset($_GET['updatePhoto_error'])) echo $_GET['updatePhoto_error']; ?></p>
                 </div>
 

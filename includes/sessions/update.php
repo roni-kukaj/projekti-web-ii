@@ -60,12 +60,12 @@ if(isset($_POST['update'])){
             $file_ext = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
             $allowed_exts = array('jpg', 'jpeg', 'png', 'gif');
             $max_file_size = 5000000; // 5 MB
-            $min_width = 250;
-            $max_width = 1600;
-            $min_height = 250;
-            $max_height = 1200;
-            $min_resolution = 72;
-            $max_resolution = 300;
+            // $min_width = 250;
+            // $max_width = 1600;
+            // $min_height = 250;
+            // $max_height = 1200;
+            // $min_resolution = 72;
+            // $max_resolution = 300;
 
             // list($width, $type, $height, $attr) = getimagesize($file_tmp);
             // $resolution = $width / ($file_size / 1024 / 1024) * 25.4;
