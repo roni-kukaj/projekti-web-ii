@@ -42,8 +42,10 @@ if(isset($_POST['update'])){
             $errors['confirmpassword_error'] = "The passwords do not match!";
 
         }
+        if(empty($errors)){
             $sql = "UPDATE users SET password='".password_hash($password, PASSWORD_BCRYPT)."' WHERE id=".$_SESSION['id'];
             mysqli_query($conn,$sql);
+        }
     }
     if(!validate_firstname($_POST['emri'])){
         $errors['emri_error'] = "Firstname is not valid!";
