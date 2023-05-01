@@ -54,24 +54,27 @@ if(isset($_POST['update'])){
             }
         }
     }
-
-$sql = "UPDATE products SET name = '{$name}', gender = '{$gender}', size = '{$size}', quantity = '{$quantity}', price = '{$price}' WHERE id = '{$id}'";
-
-    if (mysqli_query($conn, $sql)) {
-        ?><script>
-            // window.location.replace('edit-product.php');
-            
-        </script>
+    if(!empty($errors)){
+        $query_string = http_build_query($errors);
+        $url = "edit-product.php?id={$id}&".$query_string;
+        ?> 
+        <script>window.location.replace('<?php echo $url; ?>');</script>
         <?php
-        
-    } else {
-        echo "Error updating record: ".mysqli_error($conn);
     }
-
-mysqli_close($conn);
+    else{
+        $sql = "UPDATE products SET name = '{$name}', gender = '{$gender}', size = '{$size}', quantity = '{$quantity}', price = '{$price}' WHERE id = '{$id}'";
+        if (mysqli_query($conn, $sql)) {
+            ?><script>
+                window.location.replace('edit-product.php');
+            </script>
+            <?php
+        } else {
+            echo "Error updating record: ".mysqli_error($conn);
+        }
+    }
 }
 else{
-    // header("Location: edit-product.php");
+    header("Location: edit-product.php");
     exit();
 }
 
