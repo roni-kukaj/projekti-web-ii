@@ -74,9 +74,9 @@
     <script>
         $("#submit").on('click',function()){
             $.ajax({
-                url: 'http://localhost/projekti-web-ii/contact.php',
+                url: 'contact-faq.php',
                 type: 'POST',
-                data: $(#contact-form).serialize(),
+                data: $('#contact-form').serialize(),
                 success:function(response){
 
                 }
