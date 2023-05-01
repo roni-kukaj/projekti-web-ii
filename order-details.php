@@ -34,7 +34,6 @@
                     <hr>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Gender: <b><?php echo $data['gender']; ?></b></li>
-                        <li class="list-group-item">Quantity: <b><?php echo $data['quantity']; ?></b></li>
                         <li class="list-group-item">Size available: <b><?php echo $data['size']; ?></b></li>
                         <li class="list-group-item">Price: <b class="text-success">$<?php echo $data['price']; ?></b></li>
                     </ul>
