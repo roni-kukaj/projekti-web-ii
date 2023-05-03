@@ -4,10 +4,10 @@
     $product_count = 0;
 
     if(!isset($_GET['filter'])){
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT * FROM products WHERE quantity > 0";
     }
     else {
-        $sql = "SELECT * FROM products WHERE gender='".$_GET['filter']."'";
+        $sql = "SELECT * FROM products WHERE gender='".$_GET['filter']."' AND quantity > 0";
     }
 
     $result = mysqli_query($conn, $sql);
