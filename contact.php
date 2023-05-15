@@ -64,25 +64,26 @@
                 <div class="row">
                     <div class="col text-end mt-2">
                         <button id="submit" type="submit" class="btn btn-success btn-lg px-3" name="contact">Let's Talk</button>
+                        <br>
+                        <div id="success"></div>
                     </div>
                 </div>
             </form>
         </div>
     </div>
 
-    <script src="https://ajax.googleaapis.com/ajax/libs/jquery/3.5./jquery.min.js"></script>
-    <script>
-        $("#submit").on('click',function()){
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+         $("#submit").on('click',function(){
             $.ajax({
-                url: 'contact-faq.php',
+                url:'http://localhost/projekti-web-ii/ajax.php',
                 type: 'POST',
-                data: $('#contact-form').serialize(),
+                data: $("#contact-form").serialize(),
                 success:function(response){
-
+                        $("#success").text("form submit success")
                 }
-
             })
-        }
+         })
     </script>
     <?php
 
