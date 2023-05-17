@@ -9,7 +9,6 @@
         </div>
     </div>
 
-   
 
     <!-- Start Map -->
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d727.6868682172372!2d21.16765345287343!3d42.64923180444831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ec1b6ecb2c1%3A0x7f0893730efce187!2sFakulteti%20Teknik!5e0!3m2!1sen!2s!4v1680563107720!5m2!1sen!2s" 
@@ -79,7 +78,7 @@
       e.preventDefault(); 
 
       $.ajax({
-        url: 'ajax.php',
+        url: 'contact-faq.php',
         type: 'POST',
         data: $(this).serialize(),
         success: function(response) {
@@ -88,7 +87,6 @@
           $("#subject").val('');
           $("#message").val('');
 
-          // Display success message
           $("#success").text("Message sent successfully");
         },
         error: function() {
@@ -99,23 +97,24 @@
   });
 </script>
 
-</script>
-<?php
 
+
+
+<?php
 /*
 $name = $_POST['firstname'];
 $email = $_POST['email'];
 $subject = $_POST['subject'];
-$message = $_POST['message'];*/
+$message = $_POST['message'];
 if (true) {
   echo "success";
 } else {
   echo "failed";
 }
-
-
+*/
 ?>
-    <?php
+
+<?php
 
     require("includes/repetitions/footer.php");
 
