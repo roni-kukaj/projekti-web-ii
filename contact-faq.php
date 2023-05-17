@@ -59,13 +59,14 @@ if(isset($_POST['contact'])){
 }
 
 ?>
-<?php
+
+<?php /*
 require("contact-faq.php");
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    /* $firstname = $_POST['firstname'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
-    $message = $_POST['message'];*/
+    $message = $_POST['message'];
 
     $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
@@ -82,4 +83,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     echo "error";
 }
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#contact-form").submit(function(e) {
+      e.preventDefault(); 
+
+      $.ajax({
+        url: 'contact-faq.php',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+          $("#name").val('');
+          $("#email").val('');
+          $("#subject").val('');
+          $("#message").val('');
+
+          $("#success").text("Message sent successfully");
+        },
+        error: function() {
+          $("#success").text("Error sending the message");
+        }
+      });
+    });
+  });
+</script>
+*/
+
 ?>

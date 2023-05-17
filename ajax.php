@@ -1,29 +1,30 @@
 <?php
+require("contact-faq.php");
 
-require("TEST/contact-faq.php");
+$dbhost = "localhost";
+$dbuser = "your_database_username";
+$dbpass = "your_database_password";
+$dbname = "your_database_name";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-   /* $firstname = $_POST['firstname'];
+$conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
+if (!$conn) {
+    die("Connection failed: ".mysqli_connect_error());
+}
+
+if (isset($_POST['contact'])) {
+    $name = $_POST['firstname'];
     $email = $_POST['email'];
     $subject = $_POST['subject'];
-    $message = $_POST['message'];*/
+    $message = $_POST['message'];
 
-    $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $subject = mysqli_real_escape_string($conn, $_POST['subject']);
-    $message = mysqli_real_escape_string($conn, $_POST['message']);
-
-    $sql = "INSERT INTO messages (firstname, email, subject, message) VALUES ('{$firstname}', '{$email}', '{$subject}', '{$message}')";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$firstname, $email, $subject, $message]);
-
-    if ($stmt->rowCount() > 0) {
-        echo "success";
+    $sql = "INSERT INTO contact_messages (name, email, subject, message) VALUES ('$name', '$email', '$subject', '$message')";
+    if (mysqli_query($conn, $sql)) {
+        $response = "success";
     } else {
-        echo "error";
+        $response = "failed";
     }
-} else {
-    echo "error";
+
+    mysqli_close($conn);
+    echo $response;
 }
 ?>
-

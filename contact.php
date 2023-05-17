@@ -72,13 +72,14 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script type="text/javascript">
   $(document).ready(function() {
     $("#contact-form").submit(function(e) {
       e.preventDefault(); 
 
       $.ajax({
-        url: 'contact-faq.php',
+        url: 'ajax.php',
         type: 'POST',
         data: $(this).serialize(),
         success: function(response) {
@@ -113,6 +114,9 @@ if (true) {
 }
 */
 ?>
+
+
+
 
 <?php
 
