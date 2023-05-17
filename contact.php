@@ -72,7 +72,6 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
     <script type="text/javascript">
   $(document).ready(function() {
     $("#contact-form").submit(function(e) {
@@ -97,26 +96,6 @@
     });
   });
 </script>
-
-
-
-
-<?php
-/*
-$name = $_POST['firstname'];
-$email = $_POST['email'];
-$subject = $_POST['subject'];
-$message = $_POST['message'];
-if (true) {
-  echo "success";
-} else {
-  echo "failed";
-}
-*/
-?>
-
-
-
 
 <?php
 
