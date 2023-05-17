@@ -78,13 +78,11 @@
     $("#contact-form").submit(function(e) {
       e.preventDefault(); 
 
-   
       $.ajax({
         url: 'ajax.php',
         type: 'POST',
         data: $(this).serialize(),
         success: function(response) {
-          // Clear the form fields
           $("#name").val('');
           $("#email").val('');
           $("#subject").val('');
@@ -109,7 +107,6 @@ $name = $_POST['firstname'];
 $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];*/
-
 if (true) {
   echo "success";
 } else {
