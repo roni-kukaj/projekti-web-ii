@@ -76,9 +76,8 @@
   $(document).ready(function() {
     $("#contact-form").submit(function(e) {
       e.preventDefault(); 
-
       $.ajax({
-        url: 'ajax.php',
+        url: 'contact-faq.php',
         type: 'POST',
         data: $(this).serialize(),
         success: function(response) {
