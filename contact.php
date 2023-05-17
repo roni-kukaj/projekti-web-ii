@@ -74,17 +74,50 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
-         $("#submit").on('click',function(){
-            $.ajax({
-                url:'http://localhost/projekti-web-ii/ajax.php',
-                type: 'POST',
-                data: $("#contact-form").serialize(),
-                success:function(response){
-                        $("#success").text("form submit success")
-                }
-            })
-         })
-    </script>
+  $(document).ready(function() {
+    $("#contact-form").submit(function(e) {
+      e.preventDefault(); 
+
+   
+      $.ajax({
+        url: 'ajax.php',
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+          // Clear the form fields
+          $("#name").val('');
+          $("#email").val('');
+          $("#subject").val('');
+          $("#message").val('');
+
+          // Display success message
+          $("#success").text("Message sent successfully");
+        },
+        error: function() {
+          $("#success").text("Error sending the message");
+        }
+      });
+    });
+  });
+</script>
+
+</script>
+<?php
+
+/*
+$name = $_POST['firstname'];
+$email = $_POST['email'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];*/
+
+if (true) {
+  echo "success";
+} else {
+  echo "failed";
+}
+
+
+?>
     <?php
 
     require("includes/repetitions/footer.php");
