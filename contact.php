@@ -69,7 +69,7 @@
         function makeRequest(){
             validateForm();
             var request = new XMLHttpRequest();
-            request.open("POST", "contact-faq2.php", true);
+            request.open("POST", "contact-faq.php", true);
             request.onreadystatechange = function(){
                 if(this.readyState === 4 && this.status === 200) {
                     document.getElementById("success-alert").style.display = 'block';
@@ -78,7 +78,6 @@
                     document.getElementById("subject").value = '';
                     document.getElementById("message").value = '';
                 }
-
             }
             var myForm = document.getElementById("contact-form");
             var formData = new FormData(myForm);
